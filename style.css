@@ -1,1 +1,10 @@
- 
+.services .card  {
+    border: 0px;
+}
+.services {
+    border: solid black 2px;
+    text-align: center;
+}
+.app-features {
+    font-size: 36px;
+}
