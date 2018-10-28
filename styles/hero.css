@@ -1,4 +1,4 @@
-/* Hero section */
+/* Hero section */ 
 .carousel-item img{
   max-height: 100vh;
 }
@@ -14,4 +14,3 @@
 .carousel-caption{
   top: 40%;
 }
-
