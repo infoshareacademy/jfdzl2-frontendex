@@ -1,0 +1,16 @@
+/* Hero section */ 
+.carousel-item img{
+  max-height: 100vh;
+}
+
+.carousel h5{
+  font-size: 5.25rem;
+}
+
+.carousel p{
+  font-size: 2rem !important;
+}
+
+.carousel-caption{
+  top: 40%;
+}
