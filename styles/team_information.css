@@ -1,6 +1,10 @@
 /* Section  team */
 .card-image-team{
+    vertical-align: middle;
+    width: 100px;
+    height: 100px;
     border-radius: 50% !important;
+
 }
 .card{
    border: 0px;
@@ -12,3 +16,16 @@
 .card-title{
    padding-bottom: 20px;
 }
+.avatar{
+    display: flex;
+    justify-content: center;
+}
+@media (max-width:992px){
+   .card-group{
+       display: flex;
+       flex-direction: column !important;
+       
+   }
+
+}
+ 
