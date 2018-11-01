@@ -1,31 +1,57 @@
 /* Section  team */
-.card-image-team{
+
+.text-center.header {
+    padding-bottom: 40px;
+}
+
+.card-image-team {
     vertical-align: middle;
     width: 100px;
     height: 100px;
     border-radius: 50% !important;
-
-}
-.card{
-   border: 0px;
 }
 
-.links{
-   text-align: center;
+.card {
+    border: 0px;
 }
-.card-title{
-   padding-bottom: 20px;
-}
-.avatar{
+
+.avatar {
     display: flex;
     justify-content: center;
 }
-@media (max-width:992px){
-   .card-group{
-       display: flex;
-       flex-direction: column !important;
-       
-   }
 
+.card-title {
+    padding-bottom: 20px;
+    min-width: inherit !important;
 }
- 
+
+.private_media {
+    text-align: center;
+}
+
+.private_media .fab {
+    font-size: 30px;
+}
+
+.private_media .far {
+    font-size: 30px;
+}
+
+.private_media a:hover {
+    color: rgb(62, 68, 62);
+}
+
+.team .btn {
+    padding: 10px 30px;
+    overflow: hidden;
+}
+
+@media (max-width:992px) {
+    .card {
+        min-width: inherit;
+    }
+    .container .team {
+        display: flex;
+        flex-direction: column;
+    }
+}
