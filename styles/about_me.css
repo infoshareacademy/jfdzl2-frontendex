@@ -1,0 +1,24 @@
+.container{
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.col{
+    border: 2px solid black;
+}
+.private_media{
+    display: inline-block;
+}
+.private_media .icon{
+    font-size: 50px !important;
+}
+.content{
+    text-align: justify;
+}
+.col-xl-12 {
+    display: flex;
+    justify-content: flex-end;
+}
+.icon{
+    margin-right: 10px;
+}
