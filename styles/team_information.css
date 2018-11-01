@@ -27,14 +27,7 @@
 
 .private_media {
     text-align: center;
-}
-
-.private_media .fab {
-    font-size: 30px;
-}
-
-.private_media .far {
-    font-size: 30px;
+    padding-bottom: 20px;
 }
 
 .private_media a:hover {
@@ -49,9 +42,5 @@
 @media (max-width:992px) {
     .card {
         min-width: inherit;
-    }
-    .container .team {
-        display: flex;
-        flex-direction: column;
     }
 }
