@@ -1,0 +1,28 @@
+.footer {
+    margin: 40px 20px 40px 20px;
+}
+
+.address {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+}
+
+.social-media {
+    width: 43px;
+    height: 43px;
+    float: right;
+    margin: 20px 20px 20px 20px;
+    text-align: right;
+    vertical-align: middle;
+    transition: 0,3 linear;
+}
+.social-media:hover {
+    transform: scale(1.2);
+    transition: 0,3 linear;   
+}
+
+.share-icons {
+    display: flex;
+    justify-content: center;
+}
