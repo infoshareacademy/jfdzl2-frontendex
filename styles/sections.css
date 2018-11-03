@@ -1,0 +1,46 @@
+/* Section  team */
+
+.text-center.header {
+    padding-bottom: 40px;
+}
+
+.card-image-team {
+    vertical-align: middle;
+    width: 100px;
+    height: 100px;
+    border-radius: 50% !important;
+}
+
+.card {
+    border: 0px;
+}
+
+.avatar {
+    display: flex;
+    justify-content: center;
+}
+
+.card-title {
+    padding-bottom: 20px;
+    min-width: inherit !important;
+}
+
+.private_media {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.private_media a:hover {
+    color: rgb(62, 68, 62);
+}
+
+.team .btn {
+    padding: 10px 30px;
+    overflow: hidden;
+}
+
+@media (max-width:992px) {
+    .card {
+        min-width: inherit;
+    }
+}
