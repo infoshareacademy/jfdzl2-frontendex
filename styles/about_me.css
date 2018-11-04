@@ -1,0 +1,42 @@
+.container.about_me {
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.private_media{
+    display: flex;
+    justify-content: space-around;
+}
+.content {
+    text-align: justify;
+}
+
+.col-xl-12 {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav {
+    margin-top: 10px;
+}
+
+.nav .icon {
+    padding-right: 30px;
+}
+
+@media (max-width: 768px) {
+    .nav {
+        display: flex;
+        justify-content: space-evenly;
+        padding: 0px;
+    }
+    .nav .icon {
+        padding: 0px;
+    }
+    .private_media {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        padding-bottom: 10px;
+    }
+}
