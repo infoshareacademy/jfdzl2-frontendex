@@ -1,8 +1,20 @@
+
+.container__services
+ {
+    text-align: center;
+    dispay: flex;
+    justify-content: space-around;
+
+}
 .card-img-feature{
+    margin: auto;
     width: 100px;
     height: 100px;
+    
 }
-
+.card__feature {
+    border: 0px;
+}
 @media (max-width:992px) {
     .card {
         min-width: inherit;
