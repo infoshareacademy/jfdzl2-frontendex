@@ -1,4 +1,7 @@
-
+.card-img-feature{
+    width: 100px;
+    height: 100px;
+}
 
 @media (max-width:992px) {
     .card {
