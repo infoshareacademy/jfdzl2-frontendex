@@ -1,5 +1,6 @@
 .container.about_me {
     margin-top: 50px;
+    width: 800px;
     display: flex;
     flex-wrap: wrap;
 }
