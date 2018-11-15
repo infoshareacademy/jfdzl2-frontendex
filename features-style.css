@@ -1,6 +1,14 @@
+.container__app-features{
+   margin: 50px 0;
+}
+.container__header{
+    text-align: center;
+    margin: 50px 0;
 
-.container__services
+}
+.container__features
  {
+   
     text-align: center;
     dispay: flex;
     justify-content: space-around;
@@ -14,9 +22,4 @@
 }
 .card__feature {
     border: 0px;
-}
-@media (max-width:992px) {
-    .card {
-        min-width: inherit;
-    }
 }
