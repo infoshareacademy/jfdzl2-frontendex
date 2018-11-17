@@ -1,0 +1,23 @@
+.container__app-features{
+   margin: 50px 0;
+}
+.container__header{
+    text-align: center;
+    margin: 50px 0;
+
+}
+.container__features{
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+
+}
+.card-img-feature{
+    margin: auto;
+    width: 100px;
+    height: 100px;
+    
+}
+.card__feature {
+    border: 0px;
+}
