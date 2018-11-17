@@ -2,7 +2,8 @@
     margin-top: 50px;
     width: 800px;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
+    
 }
 .private_media{
     display: flex;
@@ -26,6 +27,10 @@
 }
 
 @media (max-width: 768px) {
+    .photo{
+        display: flex;
+        justify-content: center;
+    }
     .nav {
         display: flex;
         justify-content: space-evenly;
@@ -39,5 +44,10 @@
         display: flex;
         justify-content: space-evenly;
         padding-bottom: 10px;
+    }  
+}
+@media (max-width: 576px){
+    .content{
+        padding: 0px 150px;
     }
 }
