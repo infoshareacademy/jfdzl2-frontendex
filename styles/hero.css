@@ -1,16 +1,64 @@
 /* Hero section */ 
-.carousel-item img{
-  max-height: 100vh;
+body{
+  overflow-x: hidden;
+}
+.navbar-brand{
+  background: url('img/logo.svg') no-repeat center;
+  width: 165px;
+  height: 55px;
+}
+.carousel-inner { 
+  overflow: hidden;
+}
+.carousel-caption {
+  font-weight: bold;
+}
+.navbar {
+  padding-bottom: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.collapse.navbar-collapse {
+  margin-top: 25px;
+}
+.nav-link {
+  font-size: 21px;
+  text-transform: uppercase;
 }
 
-.carousel h5{
-  font-size: 5.25rem;
-}
+@media (min-width: 769px){
+  .carousel-inner {
+    height: 650px; 
+  }
+  .carousel h5 {
+    font-size: 49px;
+  }
 
-.carousel p{
-  font-size: 2rem !important;
+  .carousel p {
+    font-size: 26px !important;
+  }
+  .carousel-caption {
+    top: 30%;
+    color: black;
+  }
+  .opacity {
+    opacity: 0.75;
+  }
 }
+@media (max-width: 768px){
+  .carousel-inner {
+    height: 350px;
+  }
+  .carousel h5 {
+    font-size: 31px;
+  }
 
-.carousel-caption{
-  top: 40%;
+  .carousel p {
+    font-size: 18px !important;
+  }
+
+  .carousel-caption {
+     top: 6%;
+  }
 }
