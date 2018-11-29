@@ -6,24 +6,30 @@ body{
   width: 160px;
   height: 45px;
 }
+
 .carousel-inner { 
   overflow: hidden;
 }
+
 .carousel-caption {
   font-weight: bold;
 }
+
 .navbar {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 55px;
 }
-/*.collapse.navbar-collapse {
-  margin-top: 25px;
-}*/
+
 .nav-link {
   font-size: 21px;
   text-transform: uppercase;
+}
+
+@media (min-width: 992px) {
+  .navbar-md-height {
+    height: 55px;
+  }
 }
 
 @media (min-width: 769px){
@@ -45,6 +51,7 @@ body{
     opacity: 0.75;
   }
 }
+
 @media (max-width: 768px){
   .carousel-inner {
     height: 350px;
