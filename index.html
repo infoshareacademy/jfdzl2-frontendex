@@ -15,15 +15,15 @@
             rel="stylesheet">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns"
             crossorigin="anonymous">
-        <link rel="stylesheet" href="./styles/style.css">
         <link rel="stylesheet" href="./styles/grayscale.css">
+        <link rel="stylesheet" href="./styles/style.css">
         <title>Frontendex app</title>
     </head>
 
-    <body>
+    <body data-spy="scroll" data-target="#navbar_container" data-offset="85" style="position: relative;">
       <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top text-center">
-          <a class="navbar-brand" href="index.html"><img src="img/logo.svg"/></a>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top text-center" id="navbar_container">
+          <a class="navbar-brand" href="index.html"><img src="img/logo.svg" class="navbar-logo"></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -85,10 +85,9 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
-
           <div class="container__app-features" id="app-function">
             <div class="container__header">
-                <h1>Funkcje aplikacji</h1>
+                <h3>Funkcje aplikacji</h3>
             </div>
             <div class="container__features">
                 <div class="card-deck">
@@ -124,9 +123,7 @@
                 </div>
             </div>
         </div>
-
-
-        <section id="projects" class="projects-section bg-light">
+        <section id="projects" class="projects-section bg-light py-4">
             <div class="container">
                 <div class="row justify-content-center no-gutters">
                     <div class="col-lg-6">
@@ -260,7 +257,7 @@
         </section>
 
         <div class="container team" id="team">
-            <h1 class="text-center header">Frontendex</h1>
+            <h3 class="text-center header">Frontendex</h3>
             <div class="card-group">
                 <div class="card">
                     <div class="avatar">
@@ -364,7 +361,7 @@
                 </div>
             </div>
 
-            <div class="container cta bg-light" id="contact">
+            <div class="container cta bg-light py-4" id="contact">
                 <form class="col-md-6 offset-md-3 py-4" formtarget="thankyou.html">
                     <h3 class="header text-center">Sign for app premiere</h3>
                     <p class="text-center">You'll receive a message when an app is ready!</p>

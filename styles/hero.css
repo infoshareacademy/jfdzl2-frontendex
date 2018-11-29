@@ -2,10 +2,9 @@
 body{
   overflow-x: hidden;
 }
-.navbar-brand{
-  background: url('img/logo.svg') no-repeat center;
-  width: 165px;
-  height: 55px;
+.navbar-logo{
+  width: 160px;
+  height: 45px;
 }
 .carousel-inner { 
   overflow: hidden;
@@ -14,14 +13,14 @@ body{
   font-weight: bold;
 }
 .navbar {
-  padding-bottom: 25px;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 55px;
 }
-.collapse.navbar-collapse {
+/*.collapse.navbar-collapse {
   margin-top: 25px;
-}
+}*/
 .nav-link {
   font-size: 21px;
   text-transform: uppercase;
