@@ -2,29 +2,34 @@
 body{
   overflow-x: hidden;
 }
-.navbar-brand{
-  background: url('img/logo.svg') no-repeat center;
-  width: 165px;
-  height: 55px;
+.navbar-logo{
+  width: 160px;
+  height: 45px;
 }
+
 .carousel-inner { 
   overflow: hidden;
 }
+
 .carousel-caption {
   font-weight: bold;
 }
+
 .navbar {
-  padding-bottom: 25px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.collapse.navbar-collapse {
-  margin-top: 25px;
-}
+
 .nav-link {
   font-size: 21px;
   text-transform: uppercase;
+}
+
+@media (min-width: 992px) {
+  .navbar-md-height {
+    height: 55px;
+  }
 }
 
 @media (min-width: 769px){
@@ -46,6 +51,7 @@ body{
     opacity: 0.75;
   }
 }
+
 @media (max-width: 768px){
   .carousel-inner {
     height: 350px;
