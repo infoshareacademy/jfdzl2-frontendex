@@ -20,7 +20,7 @@
         <title>Frontendex app</title>
     </head>
 
-    <body data-spy="scroll" data-target="#navbar_container" data-offset="85" style="position: relative;">
+    <body data-spy="scroll" data-target="#navbar_container" data-offset="85" style="position: relative;" onload= "checkCookie()">
       <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top text-center navbar-md-height" id="navbar_container">
           <a class="navbar-brand" href="index.html"><img src="img/logo.svg" class="navbar-logo"></a>
@@ -52,7 +52,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Komunikat o plikach cookies</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" >
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
@@ -60,7 +60,7 @@
                     <p>Strona korzysta z plików cookies w celu realizacji usług i zgodnie z Polityką Plików Cookies. Możesz określić warunki przechowywania lub dostępu do plików cookies w Twojej przeglądarce.</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" id="accept-cookies" onclick="createConsentCookie()">Ok, rozumiem</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" aria-label="Close" id="accept-cookies" onclick="cookiesGranted()">Ok, rozumiem</button>
                 </div>
             </div>
         </div>
