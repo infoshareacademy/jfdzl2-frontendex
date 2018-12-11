@@ -47,6 +47,24 @@
           </div>
         </nav>
     </div>
+    <div class="modal" id="myModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Komunikat o plikach cookies</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Strona korzysta z plików cookies w celu realizacji usług i zgodnie z Polityką Plików Cookies. Możesz określić warunki przechowywania lub dostępu do plików cookies w Twojej przeglądarce.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="accept-cookies" onclick="createConsentCookie()">Ok, rozumiem</button>
+                </div>
+            </div>
+        </div>
+    </div>
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -85,38 +103,38 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
-          <div class="container__app-features" id="app-function">
+        <div class="container__app-features" id="app-function">
             <div class="container__header">
                 <h3>Funkcje aplikacji</h3>
             </div>
             <div class="container__features">
                 <div class="card-deck">
                     <div class="card card__feature">
-                        <img class="card-img-top card-img-feature" src="img/car-repair.png" alt="Card image cap">
+                        <img class="card-img-top card-img-feature" src="img/update.png" alt="Card image cap">
                         <div class="card-body">
-                            <h5 class="card-title">Lorem ipsum dolor sit amet consectetur adipisicing elit. </h5>
+                            <h5 class="card-title">Status naprawy aktualizowany na bieżąco, powiadomienia o zmianie stanu wysyłane mailowo i przez SMS</h5>
 
                         </div>
                     </div>
                     <div class="card card__feature">
-                        <img class="card-img-top card-img-feature" src="img/car-repair.png" alt="Card image cap">
+                        <img class="card-img-top card-img-feature" src="img/car-parts.png" alt="Card image cap">
                         <div class="card-body">
-                            <h5 class="card-title">Lorem ipsum dolor sit amet consectetur adipisicing elit. </h5>
+                            <h5 class="card-title">Dostęp do obszernej bazy danych części samochodowych - możliwość wyboru m.in. na podstawie ceny lub opinii innych użytkowników</h5>
 
                         </div>
                     </div>
                     <div class="card card__feature">
-                        <img class="card-img-top card-img-feature" src="img/car-repair.png" alt="Card image cap">
+                        <img class="card-img-top card-img-feature" src="img/piggy-bank.png" alt="Card image cap">
                         <div class="card-body">
-                            <h5 class="card-title">Lorem ipsum dolor sit amet consectetur adipisicing elit. </h5>
+                            <h5 class="card-title">Oszczędność czasu- wizyty klienta w serwisie ograniczone dzięki możliwości komunikacji poprzez aplikację </h5>
 
                         </div>
                     </div>
 
                     <div class="card card__feature">
-                        <img class="card-img-top card-img-feature" src="img/car-repair.png" alt="Card image cap">
+                        <img class="card-img-top card-img-feature" src="img/edit.png" alt="Card image cap">
                         <div class="card-body">
-                            <h5 class="card-title">Lorem ipsum dolor sit amet consectetur adipisicing elit. </h5>
+                            <h5 class="card-title">Klienci mogą wybierać serwis na podstawie opinii innych użytkowników aplikacji </h5>
 
                         </div>
                     </div>
@@ -405,6 +423,7 @@
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
                 crossorigin="anonymous"></script>
             <script src="js/navbar-toggler-hide.js"></script>
+            <script src="js/cookie-consent.js"></script>
     </body>
 
 </html>
