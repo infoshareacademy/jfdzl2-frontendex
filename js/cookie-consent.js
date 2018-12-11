@@ -22,19 +22,20 @@ function setCookie(cname, cvalue, exdays) {
     return "";
   }
   
-function createConsentCookie() {
+function cookiesGranted() {
   
-    setCookie("consent", true, 365)
+    setCookie("granted", true, 365)
 }
 
-//   function checkCookie() {
-//     var user = getCookie("username");
-//     if (user != "") {
-//       alert("Welcome again " + user);
-//     } else {
-//       user = prompt("Please enter your name:", "");
-//       if (user != "" && user != null) {
-//         setCookie("username", user, 365);
-//       }
-//     }
-//   }
+
+
+  function checkCookie() {
+    var cookie = getCookie("granted")
+    if (cookie === "") {
+      alert("Welcome again ")
+    } else {
+      $("#myModal").modal()
+      if (cookie != "" && cookie != null) {
+        setCookie("granted", cookie, 365)
+    }
+  }
