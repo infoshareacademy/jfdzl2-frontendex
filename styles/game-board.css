@@ -51,7 +51,7 @@
     flex-direction: row;
 }
 
-.obstacle {
+.game-point {
     background-image: url("../img/game-point.png");
     background-size: contain;
     height: 5%;
@@ -63,6 +63,7 @@
 .player {
     background-image: url("../img/player.png");
     background-size: contain;
+    background-repeat: no-repeat;
     height: 5%;
     width: 5%;
     position: absolute;
@@ -76,6 +77,16 @@
     position: absolute;
     top: 0;
     left: 10%;
+}
+.obstacle {
+    background-image: url("../img/police.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 5%;
+    width: 5%;
+    position: absolute;
+    top: 0;
+    left: 15%;
 }
 
 @media screen and (max-width: 370px) {
