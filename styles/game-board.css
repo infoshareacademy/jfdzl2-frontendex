@@ -79,7 +79,7 @@
     left: 10%;
 }
 .obstacle {
-    background-image: url("../img/police.png");
+    background-image: url("../img/game-obstacle.png");
     background-size: contain;
     background-repeat: no-repeat;
     height: 5%;
