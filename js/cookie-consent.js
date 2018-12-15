@@ -1,4 +1,4 @@
-$("#myModal").modal()
+
 
 function setCookie(cname, cvalue, exdays) {
     var d = new Date();
@@ -31,11 +31,12 @@ function cookiesGranted() {
 
   function checkCookie() {
     var cookie = getCookie("granted")
-    if (cookie === "") {
-      alert("Welcome again ")
+    if (cookie) {
+      alert('welcome again')
     } else {
       $("#myModal").modal()
       if (cookie != "" && cookie != null) {
         setCookie("granted", cookie, 365)
     }
   }
+}
