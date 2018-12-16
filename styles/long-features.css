@@ -1,0 +1,28 @@
+
+.projects-container > div {
+    background-color: #7E7D84;
+}
+
+.projects-section {
+    padding: 10rem 0;
+  }
+  
+.projects-section .featured-text {
+    padding: 2rem;
+  }
+
+.features-subheading {
+    color: black;
+}
+
+@media (min-width: 992px) {
+    .projects-section .project-text {
+      padding: 5rem;
+    }
+    .projects-section .line {
+      border-color: #d782d9;
+      border-width: .25rem;
+      width: 30%;
+    }
+  }
+  
