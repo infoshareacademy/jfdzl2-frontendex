@@ -31,12 +31,10 @@ function cookiesGranted() {
 
   function checkCookie() {
     var cookie = getCookie("granted")
-    if (cookie) {
-      alert('welcome again')
-    } else {
+    if (!cookie) {
       $("#myModal").modal()
       if (cookie != "" && cookie != null) {
         setCookie("granted", cookie, 365)
-    }
+    } 
+   }
   }
-}
