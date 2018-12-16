@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Car game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="styles/game-board.css"
+    />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="board-container">
+      <div class="game">
+          <div class="board-heading">
+            <span class="score">
+                <span class="score-label">SCORE:</span>
+                <span class="score-value"></span>
+            </span>
+            <span>
+                <span class="timer-label">TIME: </span>
+                <span class="timer-value"></span>
+            </span>
+            <span class="life-icons-container">
+                <i class="far fa-heart"></i>
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-heart"></i>
+              </span>
+          </div>
+          <div class="board">
+            <div class="game-point"></div>
+            <div class="player"></div>
+            <div class="wall"></div>
+            <div class="obstacle"></div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+
+    <script src="js/game-board.js"></script>
+  </body>
+</html>
