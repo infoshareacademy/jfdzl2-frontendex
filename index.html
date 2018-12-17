@@ -20,371 +20,400 @@
 		<title>Frontendex app</title>
 	</head>
 
-<body data-spy="scroll" data-target="#navbar_container" data-offset="85" style="position: relative;"> 
-		<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top text-center navbar-md-height container" id="navbar_container">
-			<a class="navbar-brand" href="index.html"><img src="img/logo.svg" class="navbar-logo"></a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-			 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
+<body data-spy="scroll" data-target="#navbar_container" data-offset="85" style="position: relative;" onload = "checkCookie()">
+	<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top text-center navbar-md-height container" id="navbar_container">
+		<a class="navbar-brand" href="index.html"><img src="img/logo.svg" class="navbar-logo" ></a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+		 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
 
-			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav mr-auto">
-					<li class="nav-item">
-						<a class="nav-link" href="#app-function">Funkcje aplikacji</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#projects">O projekcie</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#team">Zespoł</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#contact">Kontakt</a>
-					</li>
-				</ul>
-			</div>
-		</nav> 
-	 
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="#app-function">Funkcje aplikacji</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#projects">O projekcie</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#team">Zespoł</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#contact">Kontakt</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
 	<div class="hero">
 		<div class="slider">
 			<div class="slider__arow">
-				<div class="slider__arrow-left">   </div>
-				<div class="slider__arrow-right">   </div> 
+				<div class="slider__arrow-left"> </div>
+				<div class="slider__arrow-right"> </div>
 			</div>
-			<img src="img/app-slide.png" alt="" class="slider__frame" /> 
-		</div> 
+			<img src="img/app-slide.png" alt="" class="slider__frame" />
+		</div>
 
 		<div class="motto">
 			<h1 class="motto_header">Aplikacja dla mechanikow i klientow.</h1>
-			<p class="motto_desc">Możesz w kilka sekund mieć wpływ na koszt naprawy swojego auta. Samodzielnie wybierz części. </p>
+			<p class="motto_desc">Możesz w kilka sekund mieć wpływ na koszt naprawy swojego auta. Samodzielnie wybierz części.
+			</p>
 		</div>
 
-		<div class="wave"> 
+		<div class="wave">
 		</div>
 
 	</div>
-
-	<div class="container__app-features" id="app-function">
-		<div class="container__header">
-			<h3>Funkcje aplikacji</h3>
+	<div class="container-modal">
+		<div class="modal" id="myModal" tabindex="-1" role="dialog">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">Komunikat o plikach cookies</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<p>Strona korzysta z plików cookies w celu realizacji usług i zgodnie z Polityką Plików Cookies. Możesz określić
+							warunki przechowywania lub dostępu do plików cookies w Twojej przeglądarce.</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" data-dismiss="modal" aria-label="Close" id="accept-cookies" onclick="cookiesGranted()">Ok,
+							rozumiem</button>
+					</div>
+				</div>
+			</div>
 		</div>
-		<div class="container__features">
-			<div class="card-deck">
-				<div class="card card__feature">
-					<img class="card-img-top card-img-feature" src="img/car-repair.png" alt="Card image cap">
+		<div class="container__app-features" id="app-function">
+			<div class="container__header">
+				<h3>Funkcje aplikacji</h3>
+			</div>
+			<div class="container__features">
+				<div class="card-deck">
+					<div class="card card__feature">
+						<img class="card-img-top card-img-feature" src="img/update.png" alt="Card image cap">
+						<div class="card-body">
+							<h5 class="card-title">Status naprawy aktualizowany na bieżąco, powiadomienia o zmianie stanu wysyłane mailowo i
+								przez SMS</h5>
+
+						</div>
+					</div>
+					<div class="card card__feature">
+						<img class="card-img-top card-img-feature" src="img/car-parts.png" alt="Card image cap">
+						<div class="card-body">
+							<h5 class="card-title">Dostęp do obszernej bazy danych części samochodowych - możliwość wyboru m.in. na
+								podstawie ceny lub opinii innych użytkowników</h5>
+
+						</div>
+					</div>
+					<div class="card card__feature">
+						<img class="card-img-top card-img-feature" src="img/piggy-bank.png" alt="Card image cap">
+						<div class="card-body">
+							<h5 class="card-title">Oszczędność czasu dzięki możliwości komunikacji poprzez aplikację </h5>
+
+						</div>
+					</div>
+
+					<div class="card card__feature">
+						<img class="card-img-top card-img-feature" src="img/edit.png" alt="Card image cap">
+						<div class="card-body">
+							<h5 class="card-title">Możliwość wyboru serwisu na podstawie opinii innych użytkowników aplikacji </h5>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<section id="projects" class="projects-section bg-light py-4">
+			<div class="container">
+				<div class="row justify-content-center no-gutters">
+					<div class="col-lg-6">
+						<img class="img-fluid" src="img/mechanic.jpg" alt="Car mechanic">
+					</div>
+					<div class="col-lg-6 order-lg-first">
+						<div class="bg-black text-center h-100">
+							<div class="d-flex h-100">
+								<div class="project-text w-100 my-auto text-center text-lg-right">
+									<h4 class="text-white">Feature 1</h4>
+									<p class="mb-0 text-white-50">Our feature description comes here.</p>
+									<hr class="d-none d-lg-block mb-0 mr-0">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row justify-content-center no-gutters mb-lg-0">
+					<div class="col-lg-6">
+						<img class="img-fluid" src="img/wheel.jpg" alt="Steering wheel">
+					</div>
+					<div class="col-lg-6">
+						<div class="bg-black text-center h-100">
+							<div class="d-flex h-100">
+								<div class="project-text w-100 my-auto text-center text-lg-left">
+									<h4 class="text-white">Feature 2</h4>
+									<p class="mb-0 text-white-50">Our product has very nice features, believe us.</p>
+									<hr class="d-none d-lg-block mb-0 ml-0">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row justify-content-center no-gutters">
+					<div class="col-lg-6">
+						<img class="img-fluid" src="img/engine.jpg" alt="Car engine">
+					</div>
+					<div class="col-lg-6 order-lg-first">
+						<div class="bg-black text-center h-100">
+							<div class="d-flex h-100">
+								<div class="project-text w-100 my-auto text-center text-lg-right">
+									<h4 class="text-white">Feature 3</h4>
+									<p class="mb-0 text-white-50">Our feature description comes here.</p>
+									<hr class="d-none d-lg-block mb-0 mr-0">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row justify-content-center no-gutters mb-lg-0">
+					<div class="col-lg-6">
+						<img class="img-fluid" src="img/oil.jpg" alt="Refilling oli in the car">
+					</div>
+					<div class="col-lg-6">
+						<div class="bg-black text-center h-100">
+							<div class="d-flex h-100">
+								<div class="project-text w-100 my-auto text-center text-lg-left">
+									<h4 class="text-white">Feature 4</h4>
+									<p class="mb-0 text-white-50">Our product has very nice features, believe us.</p>
+									<hr class="d-none d-lg-block mb-0 ml-0">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row justify-content-center no-gutters">
+					<div class="col-lg-6">
+						<img class="img-fluid" src="img/gear.jpg" alt="Gearbox">
+					</div>
+					<div class="col-lg-6 order-lg-first">
+						<div class="bg-black text-center h-100">
+							<div class="d-flex h-100">
+								<div class="project-text w-100 my-auto text-center text-lg-right">
+									<h4 class="text-white">Feature 5</h4>
+									<p class="mb-0 text-white-50">Our feature description comes here.</p>
+									<hr class="d-none d-lg-block mb-0 mr-0">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row justify-content-center no-gutters mb-lg-0">
+					<div class="col-lg-6">
+						<img class="img-fluid" src="img/lights.jpg" alt="Car lights">
+					</div>
+					<div class="col-lg-6">
+						<div class="bg-black text-center h-100">
+							<div class="d-flex h-100">
+								<div class="project-text w-100 my-auto text-center text-lg-left">
+									<h4 class="text-white">Feature 6</h4>
+									<p class="mb-0 text-white-50">Our product has very nice features, believe us.</p>
+									<hr class="d-none d-lg-block mb-0 ml-0">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row justify-content-center no-gutters">
+					<div class="col-lg-6">
+						<img class="img-fluid" src="img/clock.jpg" alt="The car clock">
+					</div>
+					<div class="col-lg-6 order-lg-first">
+						<div class="bg-black text-center h-100">
+							<div class="d-flex h-100">
+								<div class="project-text w-100 my-auto text-center text-lg-right">
+									<h4 class="text-white">Feature 7</h4>
+									<p class="mb-0 text-white-50">Our feature description comes here.</p>
+									<hr class="d-none d-lg-block mb-0 mr-0">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row justify-content-center no-gutters  mb-lg-0">
+					<div class="col-lg-6">
+						<img class="img-fluid" src="img/wheel.jpg" alt="">
+					</div>
+					<div class="col-lg-6">
+						<div class="bg-black text-center h-100">
+							<div class="d-flex h-100">
+								<div class="project-text w-100 my-auto text-center text-lg-left">
+									<h4 class="text-white">Feature 8</h4>
+									<p class="mb-0 text-white-50">Our product has very nice features, believe us.</p>
+									<hr class="d-none d-lg-block mb-0 ml-0">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<div class="container team" id="team">
+			<h3 class="text-center header">Frontendex</h3>
+			<div class="card-group">
+				<div class="card">
+					<div class="avatar">
+						<img class="card-img-top card-image-team" src="https://ca.slack-edge.com/TD1P6PJGM-UD3J5Q3NX-6066ad0f4f89-512"
+						 alt="Card image cap">
+					</div>
 					<div class="card-body">
-						<h5 class="card-title">Lorem ipsum dolor sit amet consectetur adipisicing elit. </h5>
-
+						<h5 class="card-title text-center">Marcin<br> Kożuchowski</h5>
+						<div class="private_media">
+							<a href="https://github.com/emkozuch" class="fab fa-github fa-2x" target="_blank"></a>
+							<a href="#" class="fab fa-linkedin fa-2x" target="_blank"></a>
+							<a href="mailto:#" class="far fa-envelope fa-2x"></a>
+						</div>
+						<div>
+							<p class="text-center">
+								<a href=".\about_me_pages\marcin.html" class="btn btn-primary btn-sm" role="button">
+									O mnie
+								</a>
+							</p>
+						</div>
 					</div>
 				</div>
-				<div class="card card__feature">
-					<img class="card-img-top card-img-feature" src="img/car-repair.png" alt="Card image cap">
+				<div class="card">
+					<div class="avatar">
+						<img class="card-img-top card-image-team" src="https://ca.slack-edge.com/TD1P6PJGM-UD2LRRVBJ-38306befa766-512"
+						 alt="Card image cap">
+					</div>
 					<div class="card-body">
-						<h5 class="card-title">Lorem ipsum dolor sit amet consectetur adipisicing elit. </h5>
-
+						<h5 class="card-title text-center">Ola<br> Wróblewska</h5>
+						<div class="private_media">
+							<a href="https://github.com/olcia09" class="fab fa-github fa-2x" target="_blank"></a>
+							<a href="#" class="fab fa-linkedin fa-2x" target="_blank"></a>
+							<a href="mailto:#" class="far fa-envelope fa-2x"></a>
+						</div>
+						<div>
+							<p class="text-center">
+								<a href=".\about_me_pages\ola.html" class="btn btn-primary btn-sm" role="button">
+									O mnie
+								</a>
+							</p>
+						</div>
 					</div>
 				</div>
-				<div class="card card__feature">
-					<img class="card-img-top card-img-feature" src="img/car-repair.png" alt="Card image cap">
+				<div class="card">
+					<div class="avatar">
+						<img class="card-img-top card-image-team" src="https://ca.slack-edge.com/TD1P6PJGM-UD4ECLR1U-9c8dcb1bc830-512"
+						 alt="Card image cap">
+					</div>
 					<div class="card-body">
-						<h5 class="card-title">Lorem ipsum dolor sit amet consectetur adipisicing elit. </h5>
-
+						<h5 class="card-title text-center">Adrian<br> Słowiński</h5>
+						<div class="private_media">
+							<a href="https://github.com/adrian-slowinski" class="fab fa-github fa-2x" target="_blank"></a>
+							<a href="#" class="fab fa-linkedin fa-2x" target="_blank"></a>
+							<a href="mailto:#" class="far fa-envelope fa-2x"></a>
+						</div>
+						<div>
+							<p class="text-center">
+								<a href=".\about_me_pages\adrian.html" class="btn btn-primary btn-sm" role="button">
+									O mnie
+								</a>
+							</p>
+						</div>
 					</div>
 				</div>
-
-				<div class="card card__feature">
-					<img class="card-img-top card-img-feature" src="img/car-repair.png" alt="Card image cap">
+				<div class="card">
+					<div class="avatar">
+						<img class="card-img-top card-image-team" src="https://ca.slack-edge.com/TD1P6PJGM-UD7L5RCQG-1308e5c4b42c-512"
+						 alt="Card image cap">
+					</div>
 					<div class="card-body">
-						<h5 class="card-title">Lorem ipsum dolor sit amet consectetur adipisicing elit. </h5>
+						<h5 class="card-title text-center">Agnieszka<br> Koryl</h5>
+						<div class="private_media">
+							<a href="https://github.com/agkoryl" class="fab fa-github fa-2x" target="_blank"></a>
+							<a href="#" class="fab fa-linkedin fa-2x" target="_blank"></a>
+							<a href="mailto:#" class="far fa-envelope fa-2x"></a>
+						</div>
+						<div>
+							<p class="text-center">
+								<a href=".\about_me_pages\agnieszka.html" class="btn btn-primary btn-sm" role="button">
+									O mnie
+								</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="card">
+					<div class="avatar">
+						<img class="card-img-top card-image-team" src="https://ca.slack-edge.com/TD1P6PJGM-UD34S5JDR-25f758d56a2c-512"
+						 alt="Card image cap">
+					</div>
+					<div class="card-body">
+						<h5 class="card-title text-center">Natalia<br> Waś</h5>
+						<div class="private_media">
+							<a href="https://github.com/Nataliawas" class="fab fa-github fa-2x" target="_blank"></a>
+							<a href="#" class="fab fa-linkedin fa-2x" target="_blank"></a>
+							<a href="mailto:#" class="far fa-envelope fa-2x"></a>
+						</div>
+						<div>
+							<p class="text-center">
+								<a href=".\about_me_pages\natalia.html" class="btn btn-primary btn-sm" role="button">
+									O mnie
+								</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
 
+			<div class="container cta bg-light py-4" id="contact">
+				<form class="col-md-6 offset-md-3 py-4" formtarget="thankyou.html">
+					<h3 class="header text-center">Sign for app premiere</h3>
+					<p class="text-center">You'll receive a message when an app is ready!</p>
+					<div class="form-group">
+						<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+						<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
 					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<section id="projects" class="projects-section bg-light py-4">
-		<div class="container">
-			<div class="row justify-content-center no-gutters">
-				<div class="col-lg-6">
-					<img class="img-fluid" src="img/mechanic.jpg" alt="Car mechanic">
-				</div>
-				<div class="col-lg-6 order-lg-first">
-					<div class="bg-black text-center h-100">
-						<div class="d-flex h-100">
-							<div class="project-text w-100 my-auto text-center text-lg-right">
-								<h4 class="text-white">Feature 1</h4>
-								<p class="mb-0 text-white-50">Our feature description comes here.</p>
-								<hr class="d-none d-lg-block mb-0 mr-0">
-							</div>
-						</div>
+					<div class="form-group form-check text-center">
+						<input type="checkbox" class="form-check-input" id="exampleCheck1">
+						<label class="form-check-label" for="exampleCheck1">Check me out</label>
 					</div>
-				</div>
+					<a class="btn btn-primary btn-lg container-fluid" href="thankyou.html" role="button">CALL TO ACTION</a>
+				</form>
 			</div>
-			<div class="row justify-content-center no-gutters mb-lg-0">
-				<div class="col-lg-6">
-					<img class="img-fluid" src="img/wheel.jpg" alt="Steering wheel">
-				</div>
-				<div class="col-lg-6">
-					<div class="bg-black text-center h-100">
-						<div class="d-flex h-100">
-							<div class="project-text w-100 my-auto text-center text-lg-left">
-								<h4 class="text-white">Feature 2</h4>
-								<p class="mb-0 text-white-50">Our product has very nice features, believe us.</p>
-								<hr class="d-none d-lg-block mb-0 ml-0">
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row justify-content-center no-gutters">
-				<div class="col-lg-6">
-					<img class="img-fluid" src="img/engine.jpg" alt="Car engine">
-				</div>
-				<div class="col-lg-6 order-lg-first">
-					<div class="bg-black text-center h-100">
-						<div class="d-flex h-100">
-							<div class="project-text w-100 my-auto text-center text-lg-right">
-								<h4 class="text-white">Feature 3</h4>
-								<p class="mb-0 text-white-50">Our feature description comes here.</p>
-								<hr class="d-none d-lg-block mb-0 mr-0">
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row justify-content-center no-gutters mb-lg-0">
-				<div class="col-lg-6">
-					<img class="img-fluid" src="img/oil.jpg" alt="Refilling oli in the car">
-				</div>
-				<div class="col-lg-6">
-					<div class="bg-black text-center h-100">
-						<div class="d-flex h-100">
-							<div class="project-text w-100 my-auto text-center text-lg-left">
-								<h4 class="text-white">Feature 4</h4>
-								<p class="mb-0 text-white-50">Our product has very nice features, believe us.</p>
-								<hr class="d-none d-lg-block mb-0 ml-0">
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row justify-content-center no-gutters">
-				<div class="col-lg-6">
-					<img class="img-fluid" src="img/gear.jpg" alt="Gearbox">
-				</div>
-				<div class="col-lg-6 order-lg-first">
-					<div class="bg-black text-center h-100">
-						<div class="d-flex h-100">
-							<div class="project-text w-100 my-auto text-center text-lg-right">
-								<h4 class="text-white">Feature 5</h4>
-								<p class="mb-0 text-white-50">Our feature description comes here.</p>
-								<hr class="d-none d-lg-block mb-0 mr-0">
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row justify-content-center no-gutters mb-lg-0">
-				<div class="col-lg-6">
-					<img class="img-fluid" src="img/lights.jpg" alt="Car lights">
-				</div>
-				<div class="col-lg-6">
-					<div class="bg-black text-center h-100">
-						<div class="d-flex h-100">
-							<div class="project-text w-100 my-auto text-center text-lg-left">
-								<h4 class="text-white">Feature 6</h4>
-								<p class="mb-0 text-white-50">Our product has very nice features, believe us.</p>
-								<hr class="d-none d-lg-block mb-0 ml-0">
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row justify-content-center no-gutters">
-				<div class="col-lg-6">
-					<img class="img-fluid" src="img/clock.jpg" alt="The car clock">
-				</div>
-				<div class="col-lg-6 order-lg-first">
-					<div class="bg-black text-center h-100">
-						<div class="d-flex h-100">
-							<div class="project-text w-100 my-auto text-center text-lg-right">
-								<h4 class="text-white">Feature 7</h4>
-								<p class="mb-0 text-white-50">Our feature description comes here.</p>
-								<hr class="d-none d-lg-block mb-0 mr-0">
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row justify-content-center no-gutters  mb-lg-0">
-				<div class="col-lg-6">
-					<img class="img-fluid" src="img/wheel.jpg" alt="">
-				</div>
-				<div class="col-lg-6">
-					<div class="bg-black text-center h-100">
-						<div class="d-flex h-100">
-							<div class="project-text w-100 my-auto text-center text-lg-left">
-								<h4 class="text-white">Feature 8</h4>
-								<p class="mb-0 text-white-50">Our product has very nice features, believe us.</p>
-								<hr class="d-none d-lg-block mb-0 ml-0">
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+			<div class="footer">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-sm text-lg-right text-sm-center text-center address">
+							<h6>infoShare Academy - oddział Lublin<br> ul. Józefa Franczaka "Lalka" 43 <br> 20-325 Lublin
+								<br> tel: 516 578 918</h6>
 
-	<div class="container team" id="team">
-		<h3 class="text-center header">Frontendex</h3>
-		<div class="card-group">
-			<div class="card">
-				<div class="avatar">
-					<img class="card-img-top card-image-team" src="https://ca.slack-edge.com/TD1P6PJGM-UD3J5Q3NX-6066ad0f4f89-512" alt="Card image cap">
-				</div>
-				<div class="card-body">
-					<h5 class="card-title text-center">Marcin<br> Kożuchowski</h5>
-					<div class="private_media">
-						<a href="https://github.com/emkozuch" class="fab fa-github fa-2x" target="_blank"></a>
-						<a href="#" class="fab fa-linkedin fa-2x" target="_blank"></a>
-						<a href="mailto:#" class="far fa-envelope fa-2x"></a>
-					</div>
-					<div>
-						<p class="text-center">
-							<a href=".\about_me_pages\marcin.html" class="btn btn-primary btn-sm" role="button">
-								O mnie
-							</a>
-						</p>
-					</div>
-				</div>
-			</div>
-			<div class="card">
-				<div class="avatar">
-					<img class="card-img-top card-image-team" src="https://ca.slack-edge.com/TD1P6PJGM-UD2LRRVBJ-38306befa766-512" alt="Card image cap">
-				</div>
-				<div class="card-body">
-					<h5 class="card-title text-center">Ola<br> Wróblewska</h5>
-					<div class="private_media">
-						<a href="https://github.com/olcia09" class="fab fa-github fa-2x" target="_blank"></a>
-						<a href="#" class="fab fa-linkedin fa-2x" target="_blank"></a>
-						<a href="mailto:#" class="far fa-envelope fa-2x"></a>
-					</div>
-					<div>
-						<p class="text-center">
-							<a href=".\about_me_pages\ola.html" class="btn btn-primary btn-sm" role="button">
-								O mnie
-							</a>
-						</p>
-					</div>
-				</div>
-			</div>
-			<div class="card">
-				<div class="avatar">
-					<img class="card-img-top card-image-team" src="https://ca.slack-edge.com/TD1P6PJGM-UD4ECLR1U-9c8dcb1bc830-512" alt="Card image cap">
-				</div>
-				<div class="card-body">
-					<h5 class="card-title text-center">Adrian<br> Słowiński</h5>
-					<div class="private_media">
-						<a href="https://github.com/adrian-slowinski" class="fab fa-github fa-2x" target="_blank"></a>
-						<a href="#" class="fab fa-linkedin fa-2x" target="_blank"></a>
-						<a href="mailto:#" class="far fa-envelope fa-2x"></a>
-					</div>
-					<div>
-						<p class="text-center">
-							<a href=".\about_me_pages\adrian.html" class="btn btn-primary btn-sm" role="button">
-								O mnie
-							</a>
-						</p>
-					</div>
-				</div>
-			</div>
-			<div class="card">
-				<div class="avatar">
-					<img class="card-img-top card-image-team" src="https://ca.slack-edge.com/TD1P6PJGM-UD7L5RCQG-1308e5c4b42c-512" alt="Card image cap">
-				</div>
-				<div class="card-body">
-					<h5 class="card-title text-center">Agnieszka<br> Koryl</h5>
-					<div class="private_media">
-						<a href="https://github.com/agkoryl" class="fab fa-github fa-2x" target="_blank"></a>
-						<a href="#" class="fab fa-linkedin fa-2x" target="_blank"></a>
-						<a href="mailto:#" class="far fa-envelope fa-2x"></a>
-					</div>
-					<div>
-						<p class="text-center">
-							<a href=".\about_me_pages\agnieszka.html" class="btn btn-primary btn-sm" role="button">
-								O mnie
-							</a>
-						</p>
-					</div>
-				</div>
-			</div>
-			<div class="card">
-				<div class="avatar">
-					<img class="card-img-top card-image-team" src="https://ca.slack-edge.com/TD1P6PJGM-UD34S5JDR-25f758d56a2c-512" alt="Card image cap">
-				</div>
-				<div class="card-body">
-					<h5 class="card-title text-center">Natalia<br> Waś</h5>
-					<div class="private_media">
-						<a href="https://github.com/Nataliawas" class="fab fa-github fa-2x" target="_blank"></a>
-						<a href="#" class="fab fa-linkedin fa-2x" target="_blank"></a>
-						<a href="mailto:#" class="far fa-envelope fa-2x"></a>
-					</div>
-					<div>
-						<p class="text-center">
-							<a href=".\about_me_pages\natalia.html" class="btn btn-primary btn-sm" role="button">
-								O mnie
-							</a>
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="container cta bg-light py-4" id="contact">
-			<form class="col-md-6 offset-md-3 py-4" formtarget="thankyou.html">
-				<h3 class="header text-center">Sign for app premiere</h3>
-				<p class="text-center">You'll receive a message when an app is ready!</p>
-				<div class="form-group">
-					<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-					<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-				</div>
-				<div class="form-group form-check text-center">
-					<input type="checkbox" class="form-check-input" id="exampleCheck1">
-					<label class="form-check-label" for="exampleCheck1">Check me out</label>
-				</div>
-				<a class="btn btn-primary btn-lg container-fluid" href="thankyou.html" role="button">CALL TO ACTION</a>
-			</form>
-		</div>
-		<div class="footer">
-			<div class="container-fluid">
-				<div class="row">
-					<div class="col-sm text-lg-right text-sm-center text-center address">
-						<h6>infoShare Academy - oddział Lublin<br> ul. Józefa Franczaka "Lalka" 43 <br> 20-325 Lublin
-							<br> tel: 516 578 918</h6>
-
-						<div class="share-icons justify-content-lg-end">
-							<a href="https://www.facebook.com/infoshareacademy/" class="fab fa-facebook fa-3x social-media" target="_blank"></a>
-							<a href="https://www.instagram.com/infoshareacademy/" class="fab fa-instagram fa-3x social-media" target="_blank"></a>
-							<a href="https://www.linkedin.com/company/infoshare-academy" class="fab fa-linkedin fa-3x social-media" target="_blank"></a>
+							<div class="share-icons justify-content-lg-end">
+								<a href="https://www.facebook.com/infoshareacademy/" class="fab fa-facebook fa-3x social-media" target="_blank"></a>
+								<a href="https://www.instagram.com/infoshareacademy/" class="fab fa-instagram fa-3x social-media" target="_blank"></a>
+								<a href="https://www.linkedin.com/company/infoshare-academy" class="fab fa-linkedin fa-3x social-media" target="_blank"></a>
+							</div>
+						</div>
+						<div class="col-sm text-lg-left text-center ">
+							<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2499.161094385331!2d22.62890631575929!3d51.21610797958824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x472256885966d96d%3A0xebfa00b7707f8b92!2sinfoShare+Academy+-+oddzia%C5%82+Lublin!5e0!3m2!1spl!2spl!4v1541268648639"></iframe>
 						</div>
 					</div>
-					<div class="col-sm text-lg-left text-center ">
-						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2499.161094385331!2d22.62890631575929!3d51.21610797958824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x472256885966d96d%3A0xebfa00b7707f8b92!2sinfoShare+Academy+-+oddzia%C5%82+Lublin!5e0!3m2!1spl!2spl!4v1541268648639"></iframe>
-					</div>
 				</div>
 			</div>
-		</div>
-		<!-- Optional JavaScript -->
-		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+			<!-- Optional JavaScript -->
+			<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
-		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-		 crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-		 crossorigin="anonymous"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-		 crossorigin="anonymous"></script>
-		<script src="js/navbar-toggler-hide.js"></script> 
+			<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+			 crossorigin="anonymous"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+			 crossorigin="anonymous"></script>
+			<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+			 crossorigin="anonymous"></script>
+			<script src="js/navbar-toggler-hide.js"></script>
+			<script src="js/cookie-consent.js"></script>
 </body>
 
 </html>
