@@ -24,3 +24,7 @@ function getCoordinates() {
     while (coordinates.length === 40)
 }
 
+function renderWalls() {
+
+    
+}
