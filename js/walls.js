@@ -42,6 +42,9 @@ class WallCoordinates {
         this.y = y
     }
 
+    const wallCoordinates = new WallCoordinates();
+    wallCoordinates.init()
+
 
     randomNumber() {
         return Math.floor(Math.random() * 20)
@@ -79,6 +82,9 @@ class WallCoordinates {
             board.appendChild(wall)
         })
     }
+
+
+
     init() {
         this.renderWalls()
     }
