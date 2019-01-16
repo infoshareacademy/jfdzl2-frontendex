@@ -42,9 +42,11 @@ class WallCoordinates {
         this.y = y
     }
 
+
     randomNumber() {
         return Math.floor(Math.random() * 20)
     }
+
 
     getCoordinates() {
         do {
@@ -52,8 +54,8 @@ class WallCoordinates {
 
             for (i = 0; i < 40; i++) {
 
-                if (coordinates.indexOf(createCoordinates(randomNumber(), randomNumber())) === -1) {
-                    coordinates.push(createCoordinates(randomNumber(), randomNumber()))
+                if (coordinates.indexOf(new WallCoordinates(randomNumber(), randomNumber())) === -1) {
+                    coordinates.push(new WallCoordinates(randomNumber(), randomNumber()))
                 }
             }
             return coordinates
@@ -62,11 +64,11 @@ class WallCoordinates {
     }
 
     renderWalls() {
-        const walls = getCoordinates()
+        const walls = this.getCoordinates()
         const wallsContent = document.querySelector('.board')
         wallsContent.innerHTML = ''
 
-        walls.forEach(function (coordinate) {
+        walls.forEach((coordinate) => {
             const wall = document.createElement('div')
             wall.classList.add('wall')
 
