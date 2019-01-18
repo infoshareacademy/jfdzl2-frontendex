@@ -370,17 +370,19 @@
 
 			<div class="container cta bg-light py-4" id="contact">
 				<form class="col-md-6 offset-md-3 py-4" formtarget="thankyou.html">
-					<h3 class="header text-center">Sign for app premiere</h3>
-					<p class="text-center">You'll receive a message when an app is ready!</p>
+					<h3 class="header text-center">Zapisz się na  premierę</h3>
+					<p class="text-center">Damy Ci znać kiedy aplikacja będzie gotowa!</p>
 					<div class="form-group">
-						<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-						<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+						<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Wpisz e-mail">
+						<small id="emailHelp" class="form-text text-muted">Twój adres e-mail jest bezpieczny.</small>
+						<div class="form-error" id="premiere-email-error"></div>
 					</div>
 					<div class="form-group form-check text-center">
-						<input type="checkbox" class="form-check-input" id="exampleCheck1">
-						<label class="form-check-label" for="exampleCheck1">Check me out</label>
+						<input type="checkbox" class="form-check-input" id="premiere-terms-checkbox">
+						<label class="form-check-label" for="exampleCheck1">Zapoznałem/am się z <a href="terms.html">regulaminem serwisu</a>.</label>
+						<div class="form-error" id="premiere-terms-error"></div>
 					</div>
-					<a class="btn btn-primary btn-lg container-fluid" href="thankyou.html" role="button">CALL TO ACTION</a>
+					<a class="btn btn-primary btn-lg container-fluid" id="contact-form-submit" href="thankyou.html" role="button">ZAPISUJE SIĘ NA PREMIERĘ!</a>
 				</form>
 			</div>
 			<div class="footer">
@@ -413,6 +415,7 @@
 			 crossorigin="anonymous"></script>
 			<script src="js/navbar-toggler-hide.js"></script>
 			<script src="js/cookie-consent.js"></script>
+			<script src="js/game-mail.js"></script>
 </body>
 
 </html>
