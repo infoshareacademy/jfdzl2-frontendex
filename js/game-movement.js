@@ -9,8 +9,6 @@ class Player {
     }
 
     renderPlayer() {
-
-
         this.player.style.left = 5 * this.playerCords.x + '%';
         this.player.style.top = 5 * this.playerCords.y + '%';
 
@@ -39,17 +37,29 @@ class Player {
         }.bind(this))
     }
     movePlayerUp() {
-        this.playerCords.y += 1;
+        if(this.player.style.top !== '0%'){
+        this.playerCords.y -= 1;
+        }
         this.renderPlayer();
     }
     movePlayerRight() {
-        console.log('right')
+        if(this.player.style.left !== '95%'){
+        this.playerCords.x += 1;
+        }
+        this.renderPlayer();
     }
     movePlayerDown() {
-        console.log('down')
+        if(this.player.style.top !== '95%'){
+        this.playerCords.y += 1;
+        }
+        this.renderPlayer();
     }
     movePlayerLeft() {
-        console.log('left')
+        if(this.player.style.left !== '0%'){
+            this.playerCords.x -= 1;
+        }
+        
+        this.renderPlayer();
     }
     init() {
         this.createPlayer();
