@@ -1,11 +1,14 @@
 /* Section  team */
+.team {
+    padding: 40px 0;
+}
 
 .container_team {
     padding-top: 60px;
 }
 
 .text-center.header {
-    padding-bottom: 40px;
+    padding: 20px 0;
 }
 
 .card-image-team {

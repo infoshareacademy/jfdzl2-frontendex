@@ -1,64 +1,194 @@
-/* Hero section */ 
-body{
+/* Hero section */
+ @import url('https://fonts.googleapis.com/css?family=Montserrat');
+body {
   overflow-x: hidden;
+  
 }
-.navbar-brand{
-  background: url('img/logo.svg') no-repeat center;
-  width: 165px;
-  height: 55px;
+h1, h2, h3, h4, h5, h6, p, span, li, a ol, ul{
+font-family: 'Montserrat',
+sans-serif;
 }
-.carousel-inner { 
-  overflow: hidden;
+
+#navbar_container {
+  background: transparent !important;
+  background-color: transparent;
 }
-.carousel-caption {
-  font-weight: bold;
+
+.navbar-logo {
+  width: 160px;
+  height: 45px;
 }
+
 .navbar {
-  padding-bottom: 25px;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: transparent;
+  background: transparent;
 }
-.collapse.navbar-collapse {
-  margin-top: 25px;
-}
+
 .nav-link {
-  font-size: 21px;
+  font-size: 16px;
   text-transform: uppercase;
 }
 
-@media (min-width: 769px){
-  .carousel-inner {
-    height: 650px; 
-  }
-  .carousel h5 {
-    font-size: 49px;
-  }
+.navbar-light .navbar-nav .nav-link {
+  color: #ffffff;
+}
 
-  .carousel p {
-    font-size: 26px !important;
-  }
-  .carousel-caption {
-    top: 30%;
-    color: black;
-  }
-  .opacity {
-    opacity: 0.75;
+@media (min-width: 992px) {
+  .navbar-md-height {
+    height: 55px;
   }
 }
-@media (max-width: 768px){
-  .carousel-inner {
-    height: 350px;
-  }
-  .carousel h5 {
-    font-size: 31px;
-  }
 
-  .carousel p {
-    font-size: 18px !important;
-  }
+.hero {
+  overflow: hidden;
+  position: relative;
+  height: 100vh;
+  /* background: linear-gradient(to bottom,
+    #281483 15%,
+    #8f6ed5 70%,
+    #d782d9 94%); */
+  background: #281483;
+  background: -moz-linear-gradient(
+    -45deg,
+    #281483 0%,
+    #8f6ed5 69%,
+    #d782d9 94%
+  );
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    -45deg,
+    #281483 0%,
+    #8f6ed5 69%,
+    #d782d9 94%
+  );
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #281483 0%, #8f6ed5 69%, #d782d9 94%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#281483', endColorstr='#d782d9', GradientType=1);
+  /* IE6-9 fallback on horizontal gradient */
+}
 
-  .carousel-caption {
-     top: 6%;
+.hero:after {
+  position: absolute;
+  content: "";
+  display: block;
+  background: url(../img/repair.jpg) no-repeat;
+  height: 100%; 
+  width: 100%;
+  opacity: 0.2;
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+}
+
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: url("../img/wave2.png");
+  height: 76px;
+  display: block;
+  z-index: 9999;
+  animation: animate 43s linear infinite;
+}
+
+.wave:before {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: url("../img/wave2.png");
+  height: 76px;
+  display: block;
+  z-index: 9999;
+  opacity: 0.6;
+  animation-delay: -5s;
+  animation: animate 34s linear infinite;
+}
+
+.wave:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: url("../img/wave2.png");
+  height: 76px;
+  animation: animate-reverse 58s linear infinite;
+  opacity: 0.4;
+  z-index: 9999;
+  display: block;
+}
+
+@keyframes animate {
+  0% {
+    background-position: 0;
+  }
+  100% {
+    background-position: 2850px;
   }
 }
+
+@keyframes animate-reverse {
+  0% {
+    background-position: 2850px;
+  }
+  100% {
+    background-position: 0;
+  }
+}
+
+.slider { 
+  width: 248px;
+  height: 480px;
+  right: 15%;
+  bottom: 15%;
+  position: absolute;
+  z-index: 9999999999;
+  overflow: hidden;
+}
+ 
+.motto{
+  position: absolute;
+  left: 15%;
+  top: 50%;
+  width: 80%; 
+  width: 55%;
+}
+
+.motto_header{
+  font-size: 40px; 
+  line-height: 48px; 
+  color: #fff; 
+  margin-bottom: 0;
+}
+
+.motto_desc {
+  font-size: 1.2rem; 
+  font-weight: 300; 
+  line-height: 1.7; 
+  padding: 20px 0; 
+  color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
