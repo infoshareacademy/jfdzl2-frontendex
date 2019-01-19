@@ -1,3 +1,4 @@
+// Dodac sprawdzenie czy nic juz nie jest na tej pozycji
 class GamePoint {
     constructor() {
         this.size = 20;
