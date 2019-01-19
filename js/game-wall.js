@@ -1,6 +1,6 @@
 class GameWall {
-  constructor() {
-    this.position = { x: 0, y: 0 };
+  constructor(xx, yy) {
+    this.position = { x: xx, y: yy };
   }
 
   getPosition() {
@@ -17,33 +17,23 @@ class WallsContainer {
     this.walls = [];
   }
 
-  populateCoordinatesArray() {  
-
-    do {
-      let wall = new GameWall();
-      let duplicates = null;
-      let randomPosition = null;
-      do {
-        randomPosition = {
-          x: Math.floor(Math.random() * 20),
-          y: Math.floor(Math.random() * 20)
-        };
-        duplicates = this.walls.filter(w => {
-          w.getPosition == randomPosition;
-        });
-        console.log(duplicates)
-      } while (duplicates.length > 0);
-      wall.setPosition(randomPosition);
-      this.walls.push(wall);
-    } while (this.walls.length < 40);
-
-    for (let i = 0; i < 40; i++) {
-      this.walls.push(new GameWall());
+  populateCoordinatesArray() {
+    let i = 0;
+    while (i < 40) {
+      let x = Math.floor(Math.random() * 20);
+      let y = Math.floor(Math.random() * 20);
+      let flag = false;
+      this.walls.forEach(wall => {
+        if (wall.position.x == x && wall.position.y == y) {
+          flag = true;
+        }
+      });
+      if (flag) {
+        continue;
+      }
+      this.walls.push(new GameWall(x, y));
+      i++;
     }
-    this.walls.forEach(function(wall) {
-      wall.position.x = Math.floor(Math.random() * 20);
-      wall.position.y = Math.floor(Math.random() * 20);
-    });
   }
 
   renderWalls() {
