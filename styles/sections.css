@@ -7,6 +7,7 @@
     padding: 20px 0;
 }
 
+
 .card-image-team {
     vertical-align: middle;
     width: 170px;
@@ -15,6 +16,7 @@
 }
 .avatar.back .icon{
     color: #281483;
+    text-decoration: none;
 }
 .avatar.back .icon:hover{
     color: #d782d9;
@@ -43,8 +45,9 @@
 
 .container.team .btn {
     padding: 10px 30px;
+    border: none;
+    
 }
-
 .flip-avatar{
     position: relative;
     transition: transform 0.5s;
@@ -82,9 +85,6 @@
     justify-content: center;
   }
  
-
-
-
 @media (max-width:992px) {
     .card {
         min-width: inherit;
