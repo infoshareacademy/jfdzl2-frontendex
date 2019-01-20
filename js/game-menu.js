@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function (event) {
-    console.log("DOM fully loaded and parsed");
+    console.log("DOM fully loaded and parsed"); 
+    
     setInterval(function () {
         if (document.getElementById("game-title").style.color === "white"){
             document.getElementById("game-title").style.color = "black";
@@ -8,4 +9,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         }
         
     }, 500)
+    
 });
+const audio = document.getElementById("music-game");
+    audio.play();
