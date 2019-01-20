@@ -37,7 +37,7 @@ class Game {
 
     
 
-    this.gamePoint = new GamePoint();
+    this.gamePoint = new GamePoint(this.gameWalls);
     this.gamePoint.init();
 
     this.player = new Player(this.gameWalls, this.lifeDown.bind(this));

@@ -1,21 +1,50 @@
-// Dodac sprawdzenie czy nic juz nie jest na tej pozycji
 class GamePoint {
-    constructor() {
+    constructor(walls) {
         this.size = 20;
         this.position = { x: 0, y: 0 };
+        this.walls = walls;
     }
-    
+
     getPosition() {
         return this.position;
-      }
+    }
 
     getRandomNumbers() {
         return Math.floor(Math.random() * 20);
     }
 
+    checkPointWallsCollision(x, y) {
+
+        const filteredWalls = this.walls.walls.filter(function (wall) {
+            return wall.position.x === x && wall.position.y === y;
+        });
+
+        console.warn(filteredWalls);
+
+        const isMatch = filteredWalls.length > 0;
+        return isMatch;
+
+    }
+
+    checkPointPlayerCollision() {
+
+    }
+
     setRandomPosition() {
-        this.position.x = this.getRandomNumbers();
-        this.position.y = this.getRandomNumbers();
+
+
+        const x = this.getRandomNumbers();
+        const y = this.getRandomNumbers();
+        if (this.checkPointWallsCollision(x, y)) {
+            this.setRandomPosition();
+            console.log('collision');
+
+            return false;
+        }
+
+        this.position.x = x;
+        this.position.y = y;
+
     }
 
     pointRender() {
@@ -31,7 +60,11 @@ class GamePoint {
 
     init() {
         this.setRandomPosition();
+        if (this.checkPointWallsCollision()) {
+            this.setRandomPosition();
+        }
         this.pointRender();
+        this.checkPointWallsCollision();
     }
 
 }

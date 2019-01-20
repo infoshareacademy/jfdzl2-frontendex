@@ -19,7 +19,7 @@ class WallsContainer {
 
   populateCoordinatesArray() {
     let i = 0;
-    while (i < 40) {
+    while (i < 80) {
       let x = Math.floor(Math.random() * 20);
       let y = Math.floor(Math.random() * 20);
       let flag = false;
