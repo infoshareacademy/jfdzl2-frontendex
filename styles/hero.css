@@ -27,6 +27,10 @@ sans-serif;
   background: transparent;
 }
 
+.navbar-nav{
+  margin-top: 26px;
+}
+
 .nav-link {
   font-size: 16px;
   text-transform: uppercase;
@@ -148,22 +152,19 @@ sans-serif;
 
 .slider { 
   width: 248px;
-  height: 480px;
-  right: 15%;
-  bottom: 15%;
+  height: 480px; 
   position: absolute;
   z-index: 9999999999;
   overflow: hidden;
-}
- 
+} 
+
 .motto{
   position: absolute;
   left: 15%;
-  top: 50%;
-  width: 80%; 
-  width: 55%;
+  top: 50%; 
+  width: 48%;
 }
-
+ 
 .motto_header{
   font-size: 40px; 
   line-height: 48px; 
@@ -177,6 +178,41 @@ sans-serif;
   line-height: 1.7; 
   padding: 20px 0; 
   color: #fff;
+}
+
+@media all and (min-width: 1085px) {
+  .slider {
+    right: 15%;
+    bottom: 15%;
+  }
+}
+
+@media all and (max-width: 1084px) {
+  .slider {
+    right: 0%;
+    bottom: 0%;
+  }
+
+  .slider__frame {
+    width: 65%;
+  }
+
+  .motto {
+    transform: translateY(-50%);
+  }
+}
+
+@media all and (max-width: 652px){
+  .slider{
+    display: none;
+  }
+
+  .slider__frame {
+    width: 100%;
+  }
+  .motto{
+    width: 70%;
+  }
 }
 
 
