@@ -23,10 +23,32 @@ class Game {
     }
   }
 
+  lifeDown() {
+    console.log("you lost life");
+  }
+
+  scoreUp() {
+   //zdobycie punktu
+  }
+
   init() {
-      
+    this.gameWalls = new WallsContainer();
+    this.gameWalls.init();
+
+    
+
+    this.gamePoint = new GamePoint();
+    this.gamePoint.init();
+
+    this.player = new Player(this.gameWalls, this.lifeDown.bind(this));
+    this.player.init();
+    this.player.setPointPosition(this.gamePoint)
+    
+    this.timer()
   }
 }
 
 var game = new Game();
-game.timer();
+game.init()
+
+

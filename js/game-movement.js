@@ -1,11 +1,25 @@
 class Player {
-    constructor() {
+    constructor(walls, lifeDown, scoreUp) {
+        this.walls = walls;
+        this.handleLifeDown = lifeDown;
+        this.handleScoreUp = scoreUp;
         this.size = 20;
         this.playerCords = {
             x: 0,
             y: 0,
         }
         this.player = null;
+    }
+
+    setPointPosition(point){
+        this.point = point;
+    }
+
+    checkPointPlayerCollision() {
+
+        if (this.playerCords.x === this.point.getPosition().x && this.playerCords.y === this.point.getPosition().y) {
+            console.log("yeah");
+        }
     }
 
     renderPlayer() {
@@ -37,28 +51,33 @@ class Player {
         }.bind(this))
     }
     movePlayerUp() {
+        
         if(this.player.style.top !== '0%'){
         this.playerCords.y -= 1;
         }
+        this.checkPointPlayerCollision();
         this.renderPlayer();
     }
     movePlayerRight() {
+        
         if(this.player.style.left !== '95%'){
         this.playerCords.x += 1;
         }
+        this.checkPointPlayerCollision();
         this.renderPlayer();
     }
     movePlayerDown() {
         if(this.player.style.top !== '95%'){
         this.playerCords.y += 1;
         }
+        this.checkPointPlayerCollision();
         this.renderPlayer();
     }
     movePlayerLeft() {
         if(this.player.style.left !== '0%'){
             this.playerCords.x -= 1;
         }
-        
+        this.checkPointPlayerCollision();
         this.renderPlayer();
     }
     init() {
@@ -67,5 +86,3 @@ class Player {
         this.attachEvents();
     }
 }
-const player = new Player();
-player.init();

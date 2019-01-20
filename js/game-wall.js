@@ -55,5 +55,4 @@ class WallsContainer {
   }
 }
 
-const gameWalls = new WallsContainer();
-gameWalls.init();
+

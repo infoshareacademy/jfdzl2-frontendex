@@ -4,6 +4,10 @@ class GamePoint {
         this.size = 20;
         this.position = { x: 0, y: 0 };
     }
+    
+    getPosition() {
+        return this.position;
+      }
 
     getRandomNumbers() {
         return Math.floor(Math.random() * 20);
@@ -32,5 +36,4 @@ class GamePoint {
 
 }
 
-const gamePoint = new GamePoint();
-gamePoint.init();
+
