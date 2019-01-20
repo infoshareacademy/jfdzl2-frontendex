@@ -22,6 +22,10 @@ class Player {
         }
     }
 
+    checkWallPlayerCollision() {
+        //sprawdzenie kolizji ze sciana
+    }
+
     renderPlayer() {
         this.player.style.left = 5 * this.playerCords.x + '%';
         this.player.style.top = 5 * this.playerCords.y + '%';
