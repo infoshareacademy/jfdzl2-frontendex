@@ -62,7 +62,9 @@
 .team .card .flip-avatar:hover {
     transform: rotateY(180deg);
   }
-
+  .team .card .flip-avatar.animated{
+    transform: rotateY(180deg);
+  }
   .avatar.front, .avatar.back {
     position: absolute;
     width: 100%;
