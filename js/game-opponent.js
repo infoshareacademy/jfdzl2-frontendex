@@ -12,8 +12,8 @@ class Opponent {
 
     checkOpponentWallsCollision(){
         
-        const filteredWalls = this.walls.walls.filter(function (wall) {
-            return wall.position.x === x && wall.position.y === y;
+        const filteredWalls = this.walls.walls.filter( (wall) =>  {
+            return wall.position.x === this.x && wall.position.y === this.y;
         });
 
         const isMatch = filteredWalls.length > 0;
@@ -57,5 +57,3 @@ class Opponent {
         
     }
 }
-const opponent = new Opponent();
-opponent.init()

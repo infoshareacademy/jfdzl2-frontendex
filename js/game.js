@@ -38,7 +38,7 @@ class Game {
     this.gameWalls = new WallsContainer();
     this.gameWalls.init();
 
-    this.opponents.push(new Opponent(this.gameWalls));
+    this.opponents.push(new Opponent(this.gameWalls).init());
     
     this.gamePoint = new GamePoint(this.gameWalls);
     this.gamePoint.init();
