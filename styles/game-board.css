@@ -54,6 +54,7 @@
 .game-point {
     background-image: url("../img/game-point.png");
     background-size: contain;
+    background-repeat: no-repeat;
     height: 5%;
     width: 5%;
     position: absolute;
@@ -78,7 +79,7 @@
     top: 0;
     left: 10%;
 }
-.obstacle {
+.opponent {
     background-image: url("../img/game-obstacle.png");
     background-size: contain;
     background-repeat: no-repeat;
