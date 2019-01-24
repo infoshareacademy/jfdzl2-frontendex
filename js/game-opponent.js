@@ -3,17 +3,17 @@ class Opponent {
         this.walls = walls;
         this.size = 20;
         this.position = { x: 0, y: 0 }
-       
-    }
 
+    }
+    
     getRandomNumbers() {
         return Math.floor(Math.random() * 20);
     }
 
-    checkOpponentWallsCollision(){
-        
-        const filteredWalls = this.walls.walls.filter( (wall) =>  {
-            return wall.position.x === this.x && wall.position.y === this.y;
+    checkOpponentWallsCollision(x,y) {
+
+        const filteredWalls = this.walls.walls.filter((wall) => {
+            return wall.position.x === x && wall.position.y === y;
         });
 
         const isMatch = filteredWalls.length > 0;
@@ -22,19 +22,21 @@ class Opponent {
     }
 
     setRandomPosition() {
-        const x = this.getRandomNumbers();
-        const y = this.getRandomNumbers();
-        if (this.checkOpponentWallsCollision(x, y)) {
-            this.setRandomPosition();
-           
 
-            return false;
-        }
+    const x = this.getRandomNumbers();
+    const y = this.getRandomNumbers();
+    if (this.checkOpponentWallsCollision(x, y)) {
+        this.setRandomPosition();
+
+        return false;
+    }
+  
         this.position.x = x;
         this.position.y = y;
+    
     }
     randomMovement() {
-       
+        
     }
     opponentRender() {
         const opponentDOM = document.createElement('div');
@@ -45,15 +47,19 @@ class Opponent {
         opponentDOM.style.top = this.position.y * 5 + '%';
 
         boardDOM.appendChild(opponentDOM);
+
     }
+
+    
     init() {
-        this.setRandomPosition();
-        
+
+         this.setRandomPosition();
+       
         if (this.checkOpponentWallsCollision()) {
             this.setRandomPosition();
         }
         this.opponentRender();
         this.checkOpponentWallsCollision()
-        
+
     }
 }
