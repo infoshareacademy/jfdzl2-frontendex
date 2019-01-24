@@ -3,6 +3,7 @@ class Opponent {
         this.walls = walls;
         this.size = 20;
         this.position = { x: 0, y: 0 }
+       
     }
 
     getRandomNumbers() {
@@ -23,6 +24,12 @@ class Opponent {
     setRandomPosition() {
         const x = this.getRandomNumbers();
         const y = this.getRandomNumbers();
+        if (this.checkOpponentWallsCollision(x, y)) {
+            this.setRandomPosition();
+           
+
+            return false;
+        }
         this.position.x = x;
         this.position.y = y;
     }
@@ -50,5 +57,5 @@ class Opponent {
         
     }
 }
-const opponent = new Opponent;
+const opponent = new Opponent();
 opponent.init()

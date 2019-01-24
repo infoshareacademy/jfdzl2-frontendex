@@ -1,5 +1,7 @@
 class Game {
-  constructor() {}
+  constructor() { 
+    this.opponents = [];
+  }
 
   timer() {
     const minutesLabel = document.getElementById("minutes");
@@ -28,23 +30,28 @@ class Game {
   }
 
   scoreUp() {
-   //zdobycie punktu
+    //zdobycie punktu
   }
 
   init() {
+    
     this.gameWalls = new WallsContainer();
     this.gameWalls.init();
 
+    this.opponents.push(new Opponent(this.gameWalls));
     
-
     this.gamePoint = new GamePoint(this.gameWalls);
     this.gamePoint.init();
-
+    
     this.player = new Player(this.gameWalls, this.lifeDown.bind(this));
     this.player.init();
-    this.player.setPointPosition(this.gamePoint)
+    this.player.setPointPosition(this.gamePoint);
+    
+
+
     
     this.timer()
+    
   }
 }
 
