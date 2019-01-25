@@ -1,5 +1,5 @@
 class Game {
-  constructor() { 
+  constructor() {
     this.opponents = [];
   }
 
@@ -34,28 +34,29 @@ class Game {
   }
 
   init() {
-    
     this.gameWalls = new WallsContainer();
     this.gameWalls.init();
 
-    this.opponents.push(new Opponent(this.gameWalls).init());
-    
+    let opponentOne = new Opponent(this.gameWalls, "opponentOne");
+    this.opponents.push(opponentOne);
+    opponentOne.init();
+    let opponentTwo = new Opponent(this.gameWalls, "opponentTwo");
+    this.opponents.push(opponentTwo);
+    opponentTwo.init();
+    let opponentThree = new Opponent(this.gameWalls, "opponentThree");
+    this.opponents.push(opponentThree);
+    opponentThree.init();
+
     this.gamePoint = new GamePoint(this.gameWalls);
     this.gamePoint.init();
-    
+
     this.player = new Player(this.gameWalls, this.lifeDown.bind(this));
     this.player.init();
     this.player.setPointPosition(this.gamePoint);
-    
 
-
-    
-    this.timer()
-    
+    this.timer();
   }
 }
 
 var game = new Game();
-game.init()
-
-
+game.init();
