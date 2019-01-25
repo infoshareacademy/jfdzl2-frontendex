@@ -5,12 +5,12 @@ class Opponent {
         this.position = { x: 0, y: 0 }
 
     }
-    
+
     getRandomNumbers() {
         return Math.floor(Math.random() * 20);
     }
 
-    checkOpponentWallsCollision(x,y) {
+    checkOpponentWallsCollision(x, y) {
 
         const filteredWalls = this.walls.walls.filter((wall) => {
             return wall.position.x === x && wall.position.y === y;
@@ -23,42 +23,59 @@ class Opponent {
 
     setRandomPosition() {
 
-    const x = this.getRandomNumbers();
-    const y = this.getRandomNumbers();
-    if (this.checkOpponentWallsCollision(x, y)) {
-        this.setRandomPosition();
+        const x = this.getRandomNumbers();
+        const y = this.getRandomNumbers();
+        if (this.checkOpponentWallsCollision(x, y)) {
+            this.setRandomPosition();
 
-        return false;
-    }
-  
+            return false;
+        }
+
         this.position.x = x;
         this.position.y = y;
-    
+
+
+
     }
     randomMovement() {
-        
+
+
     }
+
+
+
     opponentRender() {
+
         const opponentDOM = document.createElement('div');
         const boardDOM = document.querySelector('.board');
 
         opponentDOM.classList.add('opponent');
-        opponentDOM.style.left = this.position.x * 5 + '%';
-        opponentDOM.style.top = this.position.y * 5 + '%';
+        setInterval(() => {
+            opponentDOM.style.left = this.position.x * 5 + '%';
+            opponentDOM.style.top = this.position.y * 5 + '%';
+        }, 1000)
+
 
         boardDOM.appendChild(opponentDOM);
-
     }
 
-    
+
+
+
+
+
+
     init() {
 
-         this.setRandomPosition();
-       
+        this.setRandomPosition();
+
         if (this.checkOpponentWallsCollision()) {
             this.setRandomPosition();
         }
+
         this.opponentRender();
+
+
         this.checkOpponentWallsCollision()
 
     }
