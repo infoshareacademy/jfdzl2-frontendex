@@ -60,11 +60,7 @@ class GamePoint {
 
     init() {
         this.setRandomPosition();
-        if (this.checkPointWallsCollision()) {
-            this.setRandomPosition();
-        }
         this.pointRender();
-        this.checkPointWallsCollision();
     }
 
 }
