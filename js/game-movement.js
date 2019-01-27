@@ -1,8 +1,9 @@
 class Player {
-    constructor(walls, lifeDown, scoreUp) {
+    constructor(walls, lifeDown, scoreUp, scoreRender) {
         this.walls = walls;
         this.handleLifeDown = lifeDown;
         this.handleScoreUp = scoreUp;
+        this.handleScoreRender = scoreRender;
         this.size = 20;
         this.playerCords = {
             x: 0,
@@ -18,9 +19,14 @@ class Player {
     checkPointPlayerCollision() {
 
         if (this.playerCords.x === this.point.getPosition().x && this.playerCords.y === this.point.getPosition().y) {
-            console.log("yeah");
+            this.handleScoreUp();
+            this.handleScoreRender();
         }
     }
+
+checkOpponentPlayerCollision() {
+    
+}
 
     checkWallPlayerCollision() {
         //sprawdzenie kolizji ze sciana

@@ -1,6 +1,7 @@
 class Game {
   constructor() {
     this.opponents = [];
+    this.score = 0;
   }
 
   timer() {
@@ -24,13 +25,21 @@ class Game {
       }
     }
   }
+  
 
   lifeDown() {
-    console.log("you lost life");
+//odjecie punktu
+console.log("you lost one life");
   }
 
   scoreUp() {
     //zdobycie punktu
+    console.log("you scored a point");
+  }
+
+  scoreRender() {
+    const score = document.querySelector('#score-value');
+    score.innerHTML = this.score;
   }
 
   init() {
@@ -50,7 +59,7 @@ class Game {
     this.gamePoint = new GamePoint(this.gameWalls);
     this.gamePoint.init();
 
-    this.player = new Player(this.gameWalls, this.lifeDown.bind(this));
+    this.player = new Player(this.gameWalls, this.lifeDown.bind(this), this.scoreUp.bind(this), this.scoreRender.bind(this));
     this.player.init();
     this.player.setPointPosition(this.gamePoint);
 
@@ -59,4 +68,6 @@ class Game {
 }
 
 var game = new Game();
+game.scoreRender();
 game.init();
+
