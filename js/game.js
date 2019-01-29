@@ -2,6 +2,7 @@ class Game {
   constructor() {
     this.opponents = [];
     this.score = 0;
+    this.lives = 3;
   }
 
   timer() {
@@ -27,11 +28,11 @@ class Game {
   }
 
   lifeDown() {
-    console.log("you lost one life");
+    this.lives -= 1;
   }
 
   scoreUp() {
-    console.log("you scored a point");
+    this.score +=1;
   }
 
   scoreRender() {
