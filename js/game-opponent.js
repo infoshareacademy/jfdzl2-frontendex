@@ -8,25 +8,12 @@ class Opponent {
 
   getOpponentPosition() {
     return this.position;
-}
-
-  getRandomNumbers() {
-    return Math.floor(Math.random() * 20);
-  }
-
-  checkOpponentWallsCollision(x, y) {
-    const filteredWalls = this.walls.walls.filter(wall => {
-      return wall.position.x === x && wall.position.y === y;
-    });
-
-    const isMatch = filteredWalls.length > 0;
-    return isMatch;
   }
 
   setRandomPosition() {
-    const x = this.getRandomNumbers();
-    const y = this.getRandomNumbers();
-    if (this.checkOpponentWallsCollision(x, y)) {
+    const x = Helper.getRandomNumbers();
+    const y = Helper.getRandomNumbers();
+    if (Helper.checkWallsObjectCollision(x, y, this.walls.walls)) {
       this.setRandomPosition();
 
       return false;
@@ -60,7 +47,11 @@ class Opponent {
       while (
         newX >= 19 ||
         newX <= 0 ||
-        this.checkOpponentWallsCollision(newX, this.position.y)
+        Helper.checkWallsObjectCollision(
+          newX,
+          this.position.y,
+          this.walls.walls
+        )
       ) {
         let randomValue = Math.floor(Math.random() * 3 + -1);
         newX = randomValue + this.position.x;
@@ -71,7 +62,11 @@ class Opponent {
       while (
         newY >= 19 ||
         newY <= 0 ||
-        this.checkOpponentWallsCollision(this.position.x, newY)
+        Helper.checkWallsObjectCollision(
+          this.position.x,
+          newY,
+          this.walls.walls
+        )
       ) {
         newY = Math.floor(Math.random() * 3 + -1) + this.position.y;
       }

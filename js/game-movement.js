@@ -17,10 +17,6 @@ class Player {
     this.point = point;
   }
 
-  getRandomNumbers() {
-    return Math.floor(Math.random() * 20);
-  }
-
   checkPointPlayerCollision() {
     if (
       this.playerCords.x === this.point.getPosition().x &&
@@ -33,30 +29,18 @@ class Player {
 
   checkOpponentPlayerCollision() {
     if (
-        this.playerCords.x === this.opponent.getOpponentPosition().x &&
-        this.playerCords.y === this.opponent.getOpponentPosition().y
-      ) {
-        this.handleLifeDown();
-      }
-  }
-
-  checkWallPlayerCollision(x, y) {
-    const filteredWalls = this.walls.walls.filter(function(wall) {
-      return wall.position.x === x && wall.position.y === y;
-    });
-
-    console.warn(filteredWalls);
-
-    const isMatch = filteredWalls.length > 0;
-    return isMatch;
+      this.playerCords.x === this.opponent.getOpponentPosition().x &&
+      this.playerCords.y === this.opponent.getOpponentPosition().y
+    ) {
+      this.handleLifeDown();
+    }
   }
 
   setRandomPosition() {
-    const x = this.getRandomNumbers();
-    const y = this.getRandomNumbers();
-    if (this.checkWallPlayerCollision(x, y)) {
+    const x = Helper.getRandomNumbers();
+    const y = Helper.getRandomNumbers();
+    if (Helper.checkWallsObjectCollision(x, y, this.walls.walls)) {
       this.setRandomPosition();
-      console.log("collision");
 
       return false;
     }
@@ -103,7 +87,7 @@ class Player {
       this.playerCords.y -= 1;
     }
     this.checkPointPlayerCollision();
-    this.checkOpponentPlayerCollision()
+    this.checkOpponentPlayerCollision();
     this.renderPlayer();
   }
   movePlayerRight() {

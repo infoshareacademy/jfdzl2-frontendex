@@ -54,5 +54,3 @@ class WallsContainer {
     this.renderWalls();
   }
 }
-
-
