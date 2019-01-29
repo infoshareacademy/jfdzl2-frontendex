@@ -6,6 +6,10 @@ class Opponent {
     this.id = id;
   }
 
+  getOpponentPosition() {
+    return this.position;
+}
+
   getRandomNumbers() {
     return Math.floor(Math.random() * 20);
   }
