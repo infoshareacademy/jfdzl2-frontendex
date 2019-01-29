@@ -29,10 +29,12 @@ class Game {
 
   lifeDown() {
     this.lives -= 1;
+    console.log("you lost one life");
   }
 
   scoreUp() {
-    this.score +=1;
+    this.score += 1;
+    console.log("you scored a point");
   }
 
   scoreRender() {
@@ -62,7 +64,7 @@ class Game {
       this.lifeDown.bind(this),
       this.scoreUp.bind(this),
       this.scoreRender.bind(this),
-      this.opponents[0],
+      this.opponents[0]
     );
     this.player.init();
     this.player.setPointPosition(this.gamePoint);
