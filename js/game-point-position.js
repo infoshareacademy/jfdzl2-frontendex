@@ -30,6 +30,11 @@ class GamePoint {
     gamePointDisplay.style.top = this.position.y * 5 + "%";
 
     const board = document.querySelector(".board");
+
+    const existingPoint = document.querySelector(".game-point");
+    if (existingPoint) {
+      board.removeChild(existingPoint);
+    }
     board.appendChild(gamePointDisplay);
   }
 

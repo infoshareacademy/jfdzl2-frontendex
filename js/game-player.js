@@ -1,5 +1,5 @@
 class Player {
-  constructor(walls, lifeDown, scoreUp, scoreRender, opponent) {
+  constructor(walls, lifeDown, scoreUp, scoreRender, opponent, gamepoint) {
     this.walls = walls;
     this.opponent = opponent;
     this.handleLifeDown = lifeDown;
@@ -11,6 +11,7 @@ class Player {
       y: 0
     };
     this.player = null;
+    this.gamepoint = gamepoint;
   }
 
   setPointPosition(point) {
@@ -24,6 +25,7 @@ class Player {
     ) {
       this.handleScoreUp();
       this.handleScoreRender();
+      this.gamepoint.init();
     }
   }
 

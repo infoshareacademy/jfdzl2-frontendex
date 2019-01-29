@@ -64,7 +64,8 @@ class Game {
       this.lifeDown.bind(this),
       this.scoreUp.bind(this),
       this.scoreRender.bind(this),
-      this.opponents[0]
+      this.opponents[0],
+      this.gamePoint,
     );
     this.player.init();
     this.player.setPointPosition(this.gamePoint);
