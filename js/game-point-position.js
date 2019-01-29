@@ -9,8 +9,6 @@ class GamePoint {
     return this.position;
   }
 
-  checkPointPlayerCollision() {}
-
   setRandomPosition() {
     const x = Helper.getRandomNumbers();
     const y = Helper.getRandomNumbers();

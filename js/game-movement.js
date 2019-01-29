@@ -83,7 +83,7 @@ class Player {
     );
   }
   movePlayerUp() {
-    if (this.player.style.top !== "0%") {
+    if (this.player.style.top !== "0%" && Helper.checkWallsObjectCollision(this.playerCords.x, this.playerCords.y-1, this.walls.walls) !== true) {
       this.playerCords.y -= 1;
     }
     this.checkPointPlayerCollision();
@@ -91,7 +91,7 @@ class Player {
     this.renderPlayer();
   }
   movePlayerRight() {
-    if (this.player.style.left !== "95%") {
+    if (this.player.style.left !== "95%" && Helper.checkWallsObjectCollision(this.playerCords.x+1, this.playerCords.y, this.walls.walls) !== true) {
       this.playerCords.x += 1;
     }
     this.checkPointPlayerCollision();
@@ -99,7 +99,7 @@ class Player {
     this.renderPlayer();
   }
   movePlayerDown() {
-    if (this.player.style.top !== "95%") {
+    if (this.player.style.top !== "95%" && Helper.checkWallsObjectCollision(this.playerCords.x, this.playerCords.y+1, this.walls.walls) !== true) {
       this.playerCords.y += 1;
     }
     this.checkPointPlayerCollision();
@@ -107,7 +107,7 @@ class Player {
     this.renderPlayer();
   }
   movePlayerLeft() {
-    if (this.player.style.left !== "0%") {
+    if (this.player.style.left !== "0%" && Helper.checkWallsObjectCollision(this.playerCords.x-1, this.playerCords.y, this.walls.walls) !== true) {
       this.playerCords.x -= 1;
     }
     this.checkPointPlayerCollision();
