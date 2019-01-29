@@ -1,13 +1,19 @@
 class Opponent {
-  constructor(walls, id) {
+  constructor(walls, id, lifeDown) {
     this.walls = walls;
     this.size = 20;
+    this.handleLifeDown = lifeDown;
     this.position = { x: 0, y: 0 };
     this.id = id;
+    this.player = null;
   }
 
   getOpponentPosition() {
     return this.position;
+  }
+
+  setPlayer(player) {
+    this.player = player;
   }
 
   setRandomPosition() {
@@ -72,7 +78,12 @@ class Opponent {
       }
       this.position.y = newY;
     }
-
+    if (
+      this.position.x === this.player.playerCords.x &&
+      this.position.y === this.player.playerCords.y
+    ) {
+      this.handleLifeDown();
+    }
     this.opponentRender();
   }
 

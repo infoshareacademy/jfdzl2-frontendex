@@ -46,7 +46,7 @@ class Game {
     this.gameWalls = new WallsContainer();
     this.gameWalls.init();
 
-    let opponentOne = new Opponent(this.gameWalls, "opponentOne");
+    let opponentOne = new Opponent(this.gameWalls, "opponentOne", this.lifeDown.bind(this));
     this.opponents.push(opponentOne);
     opponentOne.init();
     // let opponentTwo = new Opponent(this.gameWalls, "opponentTwo");
@@ -69,6 +69,7 @@ class Game {
     );
     this.player.init();
     this.player.setPointPosition(this.gamePoint);
+    this.opponents.forEach(opponent => opponent.setPlayer(this.player));
 
     this.timer();
   }
