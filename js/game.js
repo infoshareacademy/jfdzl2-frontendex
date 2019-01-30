@@ -1,6 +1,8 @@
 class Game {
   constructor() {
     this.opponents = [];
+    this.score = 0;
+    this.lives = 3;
   }
 
   timer() {
@@ -26,37 +28,53 @@ class Game {
   }
 
   lifeDown() {
-    console.log("you lost life");
+    this.lives -= 1;
+    console.log("you lost one life");
   }
 
   scoreUp() {
-    //zdobycie punktu
+    this.score += 1;
+    console.log("you scored a point");
+  }
+
+  scoreRender() {
+    const score = document.querySelector("#score-value");
+    score.innerHTML = this.score;
   }
 
   init() {
     this.gameWalls = new WallsContainer();
     this.gameWalls.init();
 
-    let opponentOne = new Opponent(this.gameWalls, "opponentOne");
+    let opponentOne = new Opponent(this.gameWalls, "opponentOne", this.lifeDown.bind(this));
     this.opponents.push(opponentOne);
     opponentOne.init();
-    let opponentTwo = new Opponent(this.gameWalls, "opponentTwo");
-    this.opponents.push(opponentTwo);
-    opponentTwo.init();
-    let opponentThree = new Opponent(this.gameWalls, "opponentThree");
-    this.opponents.push(opponentThree);
-    opponentThree.init();
+    // let opponentTwo = new Opponent(this.gameWalls, "opponentTwo");
+    // this.opponents.push(opponentTwo);
+    // opponentTwo.init();
+    // let opponentThree = new Opponent(this.gameWalls, "opponentThree");
+    // this.opponents.push(opponentThree);
+    // opponentThree.init();
 
     this.gamePoint = new GamePoint(this.gameWalls);
     this.gamePoint.init();
 
-    this.player = new Player(this.gameWalls, this.lifeDown.bind(this));
+    this.player = new Player(
+      this.gameWalls,
+      this.lifeDown.bind(this),
+      this.scoreUp.bind(this),
+      this.scoreRender.bind(this),
+      this.opponents[0],
+      this.gamePoint
+    );
     this.player.init();
     this.player.setPointPosition(this.gamePoint);
+    this.opponents.forEach(opponent => opponent.setPlayer(this.player));
 
     this.timer();
   }
 }
 
 var game = new Game();
+game.scoreRender();
 game.init();

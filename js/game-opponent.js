@@ -1,28 +1,25 @@
 class Opponent {
-  constructor(walls, id) {
+  constructor(walls, id, lifeDown) {
     this.walls = walls;
     this.size = 20;
+    this.handleLifeDown = lifeDown;
     this.position = { x: 0, y: 0 };
     this.id = id;
+    this.player = null;
   }
 
-  getRandomNumbers() {
-    return Math.floor(Math.random() * 20);
+  getOpponentPosition() {
+    return this.position;
   }
 
-  checkOpponentWallsCollision(x, y) {
-    const filteredWalls = this.walls.walls.filter(wall => {
-      return wall.position.x === x && wall.position.y === y;
-    });
-
-    const isMatch = filteredWalls.length > 0;
-    return isMatch;
+  setPlayer(player) {
+    this.player = player;
   }
 
   setRandomPosition() {
-    const x = this.getRandomNumbers();
-    const y = this.getRandomNumbers();
-    if (this.checkOpponentWallsCollision(x, y)) {
+    const x = Helper.getRandomNumbers();
+    const y = Helper.getRandomNumbers();
+    if (Helper.checkWallsObjectCollision(x, y, this.walls.walls)) {
       this.setRandomPosition();
 
       return false;
@@ -56,7 +53,11 @@ class Opponent {
       while (
         newX >= 19 ||
         newX <= 0 ||
-        this.checkOpponentWallsCollision(newX, this.position.y)
+        Helper.checkWallsObjectCollision(
+          newX,
+          this.position.y,
+          this.walls.walls
+        )
       ) {
         let randomValue = Math.floor(Math.random() * 3 + -1);
         newX = randomValue + this.position.x;
@@ -67,13 +68,22 @@ class Opponent {
       while (
         newY >= 19 ||
         newY <= 0 ||
-        this.checkOpponentWallsCollision(this.position.x, newY)
+        Helper.checkWallsObjectCollision(
+          this.position.x,
+          newY,
+          this.walls.walls
+        )
       ) {
         newY = Math.floor(Math.random() * 3 + -1) + this.position.y;
       }
       this.position.y = newY;
     }
-
+    if (
+      this.position.x === this.player.playerCords.x &&
+      this.position.y === this.player.playerCords.y
+    ) {
+      this.handleLifeDown();
+    }
     this.opponentRender();
   }
 
