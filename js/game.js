@@ -65,7 +65,7 @@ class Game {
       this.scoreUp.bind(this),
       this.scoreRender.bind(this),
       this.opponents[0],
-      this.gamePoint,
+      this.gamePoint
     );
     this.player.init();
     this.player.setPointPosition(this.gamePoint);
