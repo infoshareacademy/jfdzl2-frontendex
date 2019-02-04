@@ -46,51 +46,52 @@ class Opponent {
   }
 
   randomMovement() {
-    const chooseAxisToMove = Math.random() > 0.5;
+      const chooseAxisToMove = Math.random() > 0.5;
 
-    if (chooseAxisToMove) {
-      let newX = Math.floor(Math.random() * 3 + -1) + this.position.x;
-      while (
-        newX >= 19 ||
-        newX <= 0 ||
-        Helper.checkWallsObjectCollision(
-          newX,
-          this.position.y,
-          this.walls.walls
-        )
-      ) {
-        let randomValue = Math.floor(Math.random() * 3 + -1);
-        newX = randomValue + this.position.x;
+      if (chooseAxisToMove) {
+        let newX = Math.floor(Math.random() * 3 + -1) + this.position.x;
+        while (
+          newX >= 19 ||
+          newX <= 0 ||
+          Helper.checkWallsObjectCollision(
+            newX,
+            this.position.y,
+            this.walls.walls
+          )
+        ) {
+          let randomValue = Math.floor(Math.random() * 3 + -1);
+          newX = randomValue + this.position.x;
+        }
+        this.position.x = newX;
+      } else {
+        let newY = Math.floor(Math.random() * 3 + -1) + this.position.y;
+        while (
+          newY >= 19 ||
+          newY <= 0 ||
+          Helper.checkWallsObjectCollision(
+            this.position.x,
+            newY,
+            this.walls.walls
+          )
+        ) {
+          newY = Math.floor(Math.random() * 3 + -1) + this.position.y;
+        }
+        this.position.y = newY;
       }
-      this.position.x = newX;
-    } else {
-      let newY = Math.floor(Math.random() * 3 + -1) + this.position.y;
-      while (
-        newY >= 19 ||
-        newY <= 0 ||
-        Helper.checkWallsObjectCollision(
-          this.position.x,
-          newY,
-          this.walls.walls
-        )
+      if (
+        this.position.x === this.player.playerCords.x &&
+        this.position.y === this.player.playerCords.y
       ) {
-        newY = Math.floor(Math.random() * 3 + -1) + this.position.y;
+        this.handleLifeDown();
       }
-      this.position.y = newY;
+      this.opponentRender();
     }
-    if (
-      this.position.x === this.player.playerCords.x &&
-      this.position.y === this.player.playerCords.y
-    ) {
-      this.handleLifeDown();
-    }
-    this.opponentRender();
-  }
+   
 
   init() {
     this.setRandomPosition();
     this.opponentRender();
 
-    setInterval(() => this.randomMovement(), 500);
+    this.opponentMovement = setInterval(() => this.randomMovement(), 500);
   }
 }

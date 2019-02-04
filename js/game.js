@@ -2,14 +2,14 @@ class Game {
   constructor() {
     this.opponents = [];
     this.score = 0;
-    this.lives = 3;
+    this.lives = 5;
   }
 
   timer() {
     const minutesLabel = document.getElementById("minutes");
     const secondsLabel = document.getElementById("seconds");
     let totalSeconds = 0;
-    setInterval(setTime, 1000);
+    this.timerID = setInterval(setTime, 1000);
 
     function setTime() {
       ++totalSeconds;
@@ -28,13 +28,16 @@ class Game {
   }
 
   lifeDown() {
-    this.lives -= 1;
-    console.log("you lost one life");
+    if (this.lives === 1) {
+      this.opponents.forEach(opp => opp.shouldMove = false);
+      this.gameOver();
+    } else {
+      this.lives -= 1;
+    }
   }
 
   scoreUp() {
     this.score += 1;
-    console.log("you scored a point");
   }
 
   scoreRender() {
@@ -42,11 +45,24 @@ class Game {
     score.innerHTML = this.score;
   }
 
+  gameOver() {
+    const modalBackground = document.querySelector("#background");
+    modalBackground.style.visibility = "visible";
+    const modalContainer = document.querySelector("#modal-container");
+    modalContainer.style.visibility = "visible";
+    clearInterval(this.timerID);
+    this.opponents.forEach(opp => clearInterval(opp.opponentMovement));
+  }
+
   init() {
     this.gameWalls = new WallsContainer();
     this.gameWalls.init();
 
-    let opponentOne = new Opponent(this.gameWalls, "opponentOne", this.lifeDown.bind(this));
+    let opponentOne = new Opponent(
+      this.gameWalls,
+      "opponentOne",
+      this.lifeDown.bind(this)
+    );
     this.opponents.push(opponentOne);
     opponentOne.init();
     // let opponentTwo = new Opponent(this.gameWalls, "opponentTwo");

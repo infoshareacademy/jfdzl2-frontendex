@@ -18,8 +18,26 @@
       href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
       integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
       crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="styles/game-over.css">
   </head>
   <body>
+    <div class="background" id="background"></div>
+    <div class="modal-container" id="modal-container">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="header-container">
+            <h5 class="game-over-title" id="game-over-title">
+              GAME OVER
+            </h5>
+          </div>
+        </div>
+        <div class="modal-body" id="modal-body">
+          <a href="" class="eightbit-button">Gram jeszcze raz, chce byc prestiżowy</a>
+          <a href="" class="eightbit-button eightbit-button--proceed">Lista najlepszych</a>
+        </div>
+      </div>
+    </div>
+
     <div class="board-container">
       <div class="game">
         <div class="board-heading">
@@ -40,6 +58,7 @@
             <i class="fas fa-heart"></i>
           </span>
         </div>
+
         <div class="board">
           <!-- <div class="game-point"></div>
             <div class="player"></div>
@@ -57,8 +76,9 @@
     <script src="js/game-point-position.js"></script>
     <script src="js/game-opponent.js"></script>
     <script src="js/game.js"></script>
-    
-    
+    <script src="js/game-over.js"></script>
+
+
 
   </body>
 </html>
