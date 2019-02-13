@@ -10,8 +10,9 @@ sans-serif;
 }
 
 #navbar_container {
-  background: transparent !important;
+  background: transparent;
   background-color: transparent;
+  z-index: 99999999999;
 }
 
 .navbar-logo {
@@ -31,6 +32,10 @@ sans-serif;
   margin-top: 26px;
 }
 
+.navbar-toggler{
+  background-color: #d782d9;
+}
+
 .nav-link {
   font-size: 16px;
   text-transform: uppercase;
@@ -43,6 +48,17 @@ sans-serif;
 @media (min-width: 992px) {
   .navbar-md-height {
     height: 55px;
+  }
+} 
+
+@media all and (max-width: 991px) {
+  .navbar-nav {
+    margin-top: 26px;
+    border-bottom: 3px solid #fff;
+    background: rgba(225, 225, 225, 0.65);
+  }
+  .navbar{
+    padding-bottom: 0;
   }
 }
 
@@ -154,7 +170,7 @@ sans-serif;
   width: 248px;
   height: 480px; 
   position: absolute;
-  z-index: 9999999999;
+  z-index: 999999999;
   overflow: hidden;
 } 
 
