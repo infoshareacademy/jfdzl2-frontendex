@@ -196,6 +196,11 @@ sans-serif;
   color: #fff;
 }
 
+.menu-game-icon {
+  width: 35px;
+  height: 35px;
+}
+
 @media all and (min-width: 1085px) {
   .slider {
     right: 15%;
@@ -216,6 +221,7 @@ sans-serif;
   .motto {
     transform: translateY(-50%);
   }
+
 }
 
 @media all and (max-width: 652px){
